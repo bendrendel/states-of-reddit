@@ -1,12 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './Post.css';
-import Search from '../search/Search';
 
 function Post() {
+
+    const postSlice = useSelector(state => state.post)
+
     return (
         <div>
             <p>Post</p>
-            <Search />
+            <p>{postSlice.data}</p>
         </div>
     )
 }

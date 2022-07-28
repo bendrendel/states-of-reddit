@@ -1,9 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './Search.css';
 
 function Search() {
+
+    const searchTerm = useSelector(state => state.search);
+
     return (
-        <p>Search</p>
+        <div>
+            <p>Search</p>
+            <p>{searchTerm.term}</p>
+        </div>
     )
 }
 
