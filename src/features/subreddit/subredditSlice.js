@@ -9,10 +9,11 @@ export const fetchData = createAsyncThunk(
         return json;
     }
 );
+
 const subredditSlice = createSlice({
     name: 'subreddit',
     initialState: {
-        data: 'test subreddit data',
+        data: '',
         isLoading: false,
         hasError: false
     },
@@ -27,6 +28,7 @@ const subredditSlice = createSlice({
             state.hasError = false;
         },
         [fetchData.rejected]: (state, action) => {
+            state.data = 'subreddit data error';
             state.isLoading = false;
             state.hasError = true;
         }

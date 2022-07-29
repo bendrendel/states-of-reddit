@@ -13,7 +13,7 @@ export const fetchData = createAsyncThunk(
 const postSlice = createSlice({
     name: 'post',
     initialState: {
-        data: 'test post data',
+        data: '',
         isLoading: false,
         hasError: false
     },
@@ -28,6 +28,7 @@ const postSlice = createSlice({
             state.hasError = false;
         },
         [fetchData.rejected]: (state, action) => {
+            state.data = 'post data error';
             state.isLoading = false;
             state.hasError = true;
         }
