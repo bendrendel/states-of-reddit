@@ -1,14 +1,22 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
+import { states } from '../../util/states';
 
 function Navbar() {
     return (
-        <div>
+        <nav>
             <p>Navbar</p>
             <Link to='/'>Home Link</Link>
-            <NavLink to='/subreddit'>Subreddit Link</NavLink>
-        </div>
+            
+            {states.map(state => {
+                return (
+                    <NavLink to={`/r/${state.name.replace(/ /g,'').toLowerCase()}/`}>
+                        {state.name}
+                    </NavLink>
+                );
+            })}
+        </nav>
     )
 }
 
