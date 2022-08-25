@@ -17,7 +17,7 @@ function App() {
 				<Route exact path='/r/:state'>
 					<Subreddit />
 				</Route>
-				<Route path='/post'>
+				<Route path='/r/:state/comments/:postid/:postname'>
 					<Post />
 				</Route>
 			</Switch>
