@@ -8,7 +8,6 @@ import { fetchData } from './subredditSlice';
 function Subreddit() {
     const dispatch = useDispatch();
     const { state } = useParams();
-    const { url } = useRouteMatch();
 
     const subredditSlice = useSelector(state => state.subreddit);
 
@@ -19,11 +18,18 @@ function Subreddit() {
     return (
         <div>
             <p>{state} Subreddit</p>
-            <Link to={`${url}/comments/postid/postname`}>Post Link</Link>
-            <p>isLoading: {subredditSlice.isLoading ? 'true' : 'false'}</p>
-            <p>hasError: {subredditSlice.hasError ? 'true': 'false'}</p>
-            <p>data: {subredditSlice.data}</p>
             <Search />
+
+            <p>isLoading: {subredditSlice.isLoading ? 'true' : 'false'}</p>
+            <p>hasError: {subredditSlice.hasError ? 'true' : 'false'}</p>
+
+            {subredditSlice.data?.data.children.map(post => (
+                <div>
+                    <p>{post.data.title}</p>
+                    <Link to={post.data.permalink}>Post Link</Link>
+                </div>
+            ))}
+            
         </div>
     )
 }

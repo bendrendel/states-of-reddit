@@ -1,8 +1,10 @@
-export const fetchSubredditData =  endpoint => {
+import { data as mockSubredditData} from './mockSubredditData';
+
+export const fetchSubredditData = endpoint => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const success = Math.random() < 0.5;
-            success ? resolve(endpoint) : reject()
+            success ? resolve(mockSubredditData) : reject()
         }, 2000);
     })
 }

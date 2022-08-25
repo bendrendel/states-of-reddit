@@ -1,3 +1,7 @@
+export const testData = {
+    kind: "this is a test of subreddit data"
+};
+
 export const data = {
     kind: "Listing",
     data: {
