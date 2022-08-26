@@ -11,7 +11,7 @@ function Navbar() {
             
             {states.map(state => {
                 return (
-                    <NavLink to={`/r/${state.name.replace(/ /g,'').toLowerCase()}/`}>
+                    <NavLink to={`/r/${state.subreddit}/`}>
                         {state.name}
                     </NavLink>
                 );

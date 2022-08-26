@@ -7,7 +7,7 @@ import { fetchData } from './subredditSlice';
 
 function Subreddit() {
     const dispatch = useDispatch();
-    const { state } = useParams();
+    const { subreddit } = useParams();
 
     const subredditSlice = useSelector(state => state.subreddit);
 
@@ -17,7 +17,7 @@ function Subreddit() {
 
     return (
         <div>
-            <p>{state} Subreddit</p>
+            <p>{`r/${subreddit}`}</p>
             <Search />
 
             <p>isLoading: {subredditSlice.isLoading ? 'true' : 'false'}</p>

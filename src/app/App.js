@@ -14,10 +14,10 @@ function App() {
 				<Route exact path='/'>
 					<Home />
 				</Route>
-				<Route exact path='/r/:state'>
+				<Route exact path='/r/:subreddit'>
 					<Subreddit />
 				</Route>
-				<Route path='/r/:state/comments/:postid/:postname'>
+				<Route path='/r/:subreddit/comments/:postid/:postname'>
 					<Post />
 				</Route>
 			</Switch>
