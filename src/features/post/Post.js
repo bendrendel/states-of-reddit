@@ -15,9 +15,14 @@ function Post() {
     return (
         <div>
             <p>Post</p>
+
             <p>isLoading: {postSlice.isLoading ? 'true' : 'false'}</p>
             <p>hasError: {postSlice.hasError ? 'true' : 'false'}</p>
-            <p>data: {postSlice.data}</p>
+            
+
+            <p>{postSlice.data && postSlice.data[0].data.children[0].data.title}</p>
+
+            {postSlice.data && postSlice.data[1].data.children.map(comment => <p>{comment.data.body}</p>)}
         </div>
     )
 }
