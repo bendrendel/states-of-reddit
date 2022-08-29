@@ -23,7 +23,7 @@ function Subreddit() {
             <p>isLoading: {subredditSlice.isLoading ? 'true' : 'false'}</p>
             <p>hasError: {subredditSlice.hasError ? 'true' : 'false'}</p>
 
-            {subredditSlice.data?.data.children.map(post => (
+            {subredditSlice.data && subredditSlice.data.data.children.map(post => (
                 <div>
                     <p>posted by {`u/${post.data.author}`} {post.data.created_utc} ago</p>
                     <p>{post.data.title}</p>
