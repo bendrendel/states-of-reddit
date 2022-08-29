@@ -16,8 +16,8 @@ function Subreddit() {
         dispatch(fetchData('the subreddit api is working yo'))
     }, []);
 
-    const elapsedCreated = () => {
-        const createDateTime = DateTime.fromSeconds(1593466086);
+    const timeSince = (utcTime) => {
+        const createDateTime = DateTime.fromSeconds(utcTime);
         const currentDateTime = DateTime.utc();
         const diff = currentDateTime.diff(createDateTime, ['years', 'months', 'days', 'hours', 'minutes']);
         const diffObj = diff.toObject();
@@ -45,8 +45,21 @@ function Subreddit() {
         } else {
             duration = `just now`;
         }
+
         return duration;
     };
+
+    const formatNum = (num) => {
+        if (num <= 999) {
+            return num;
+        } else if (num <= 999999) {
+            return (num/1000).toFixed(1).replace(/\.0$/, '') + 'k';
+        } else if (num <= 999999999) {
+            return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+        } else {
+            return (num / 1000000000).toFixed(1).replace(/\.0$/, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'B';
+        }
+    }
 
     return (
         <div>
@@ -59,11 +72,10 @@ function Subreddit() {
             {subredditSlice.data && subredditSlice.data.data.children.map(post => (
                 <div>
                     <p>posted by {`u/${post.data.author}`}</p>
-                    <p>{post.data.created_utc} ago</p>
-                    <p>diff: {elapsedCreated()}</p>
+                    <p>diff: {timeSince(post.data.created_utc)}</p>
                     <p>{post.data.title}</p>
-                    <p>{post.data.ups} upvotes</p>
-                    <p>{post.data.num_comments} comments</p>
+                    <p>{formatNum(post.data.ups)} {post.data.ups == 1 ? 'upvote' : 'upvotes'}</p>
+                    <p>{formatNum(post.data.num_comments)} {post.data.num_comments == 1 ? 'comment' : 'comments'}</p>
                     <Link to={post.data.permalink}>Post Link</Link>
                 </div>
             ))}
