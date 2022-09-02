@@ -2,13 +2,17 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Post.css';
-import { fetchData } from './postSlice';
+import { fetchData, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
+import { timeSince, kmbt } from '../../util/formatting';
 
 function Post() {
     const dispatch = useDispatch();
     const { subreddit } = useParams();
 
-    const postSlice = useSelector(state => state.post);
+    const isLoading = useSelector(selectIsLoading);
+    const hasError = useSelector(selectHasError);
+    const post = useSelector(selectPost);
+    const comments = useSelector(selectComments);
 
     useEffect(() => {
         dispatch(fetchData('the post api is working yo'))
@@ -16,24 +20,24 @@ function Post() {
 
     return (
         <div>
-            <p>isLoading: {postSlice.isLoading ? 'true' : 'false'}</p>
-            <p>hasError: {postSlice.hasError ? 'true' : 'false'}</p>
-            {postSlice.data && (
+            <p>isLoading: {isLoading ? 'true' : 'false'}</p>
+            <p>hasError: {hasError ? 'true' : 'false'}</p>
+            {post && (
                 <div>
-                    <p>{`r/${subreddit} - posted by u/${postSlice.data[0].data.children[0].data.author} ${postSlice.data[0].data.children[0].data.created_utc} ago`}</p>
-                    <p>{postSlice.data[0].data.children[0].data.title}</p>
+                    <p>{`r/${subreddit} - posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
+                    <p>{post.title}</p>
                     
-                    {/\.jpg$/.test(postSlice.data[0].data.children[0].data.url) ? <img src={postSlice.data[0].data.children[0].data.url} /> : 'no image!'}
+                    {/\.jpg$/.test(post.url) ? <img src={post.url} /> : 'no image!'}
                     
-                    <p>{postSlice.data[0].data.children[0].data.upvote_ratio * 100}% upvoted</p>
-                    <p>{postSlice.data[0].data.children[0].data.num_comments} comments</p>
+                    <p>{post.upvote_ratio * 100}% upvoted</p>
+                    <p>{kmbt(post.num_comments)} comments</p>
 
-                    {postSlice.data[1].data.children.map(comment => (
+                    {comments.map(comment => (
                         <div>
                             <p>{comment.data.author}</p>
-                            <p>{comment.data.created_utc} ago</p>
+                            <p>{timeSince(comment.data.created_utc)}</p>
                             <p>{comment.data.body}</p>
-                            <p>{comment.data.ups} upvotes</p>
+                            <p>{kmbt(comment.data.ups)} upvotes</p>
                         </div>
                     ))}                    
                 </div>
