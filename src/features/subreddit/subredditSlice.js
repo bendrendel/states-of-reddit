@@ -34,5 +34,8 @@ const subredditSlice = createSlice({
     }
 });
 
+export const selectIsLoading = store => store.subreddit.isLoading;
+export const selectHasError = store => store.subreddit.hasError;
+export const selectPosts = store => store.subreddit.data && store.subreddit.data.data.children;
 
 export default subredditSlice.reducer;
