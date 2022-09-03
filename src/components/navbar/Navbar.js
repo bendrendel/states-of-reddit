@@ -2,21 +2,33 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import { states } from '../../util/states';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
+    const handleClick = () => {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.toggle('hide');
+    };
+
     return (
         <nav>
-            <p>Navbar</p>
-            <Link to='/'>Home Link</Link>
-            
-            {states.map(state => {
-                return (
-                    <NavLink to={`/r/${state.subreddit}/`}>
-                        {state.name}
-                    </NavLink>
-                );
-            })}
+            <ul id='main-menu'>
+                <li><Link to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                <li><FontAwesomeIcon icon={faBars} onClick={handleClick} /></li>
+            </ul>
+            <ul id='dropdown-menu' class='hide'>
+                {states.map(state => (
+                    <li key={state}>
+                        <NavLink to={`/r/${state.subreddit}/`}>
+                            {state.name}
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
         </nav>
+
+        
     )
 }
 
