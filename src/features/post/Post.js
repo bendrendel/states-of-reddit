@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Post.css';
 import { fetchData, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
-import { timeSince, kmbt } from '../../util/formatting';
+import { timeSince, kmbt, percent } from '../../util/formatting';
 
 function Post() {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function Post() {
                     
                     {/\.jpg$/.test(post.url) ? <img src={post.url} /> : 'no image!'}
                     
-                    <p>{post.upvote_ratio * 100}% upvoted</p>
+                    <p>{percent(post.upvote_ratio)} upvoted</p>
                     <p>{kmbt(post.num_comments)} comments</p>
 
                     {comments.map(comment => (

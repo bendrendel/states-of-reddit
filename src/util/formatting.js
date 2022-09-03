@@ -48,3 +48,7 @@ export const kmbt = (number) => {
             return `${number.toFixed(1).replace(/\.0$/, '')}`;        
     }
 }
+
+export const percent = (decimal) => {
+    return `${(decimal * 100).toFixed(0)}%`;
+}
