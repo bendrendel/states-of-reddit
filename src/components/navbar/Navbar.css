@@ -10,13 +10,12 @@ ul {
     left: 0;
     right: 0;
     height: 50px;
-    display: flex;
-    justify-content: space-between;
     background-color: gray;
 }
 
-#dropdown-menu.hide {
-    display: none;
+#main-menu ul {
+    display: flex;
+    justify-content: space-between;
 }
 
 #dropdown-menu {
@@ -24,8 +23,13 @@ ul {
     top: 50px;
     bottom: 0;
     right: 0;
+    left: 0;
     overflow-y: scroll;
     display: block;
     background-color: lightblue;
     width: 500px;
+}
+
+#dropdown-menu.hide {
+    display: none;
 }

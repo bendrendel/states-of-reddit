@@ -12,21 +12,25 @@ function Navbar() {
     };
 
     return (
-        <nav>
-            <ul id='main-menu'>
-                <li><Link to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
-                <li><FontAwesomeIcon icon={faBars} onClick={handleClick} /></li>
-            </ul>
-            <ul id='dropdown-menu' class='hide'>
-                {states.map(state => (
-                    <li key={state}>
-                        <NavLink to={`/r/${state.subreddit}/`}>
-                            {state.name}
-                        </NavLink>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+        <header>
+            <nav id='main-menu'>
+                <ul>
+                    <li><Link to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
+                    <li><FontAwesomeIcon icon={faBars} onClick={handleClick} /></li>
+                </ul>                
+            </nav>
+            <nav id='dropdown-menu' class='hide'>
+                <ul>
+                    {states.map(state => (
+                        <li key={state}>
+                            <NavLink to={`/r/${state.subreddit}/`}>
+                                {state.name}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>                
+            </nav>
+        </header>
 
         
     )
