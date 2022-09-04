@@ -28,6 +28,7 @@ ul {
     display: block;
     background-color: lightblue;
     width: 500px;
+    z-index: 100;
 }
 
 #dropdown-menu.hide {
