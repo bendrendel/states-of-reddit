@@ -8,7 +8,6 @@ function Search() {
 
     return (
         <div>
-            <p>Search</p>
             <p>{searchTerm.term}</p>
         </div>
     )

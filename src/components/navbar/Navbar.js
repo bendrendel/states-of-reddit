@@ -13,13 +13,13 @@ function Navbar() {
 
     return (
         <header>
-            <nav id='main-menu'>
+            <nav className='main-menu'>
                 <ul>
                     <li><Link to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
                     <li><FontAwesomeIcon icon={faBars} onClick={handleClick} /></li>
                 </ul>                
             </nav>
-            <nav id='dropdown-menu' class='hide'>
+            <nav className='dropdown-menu hide' id='dropdown-menu'>
                 <ul>
                     {states.map(state => (
                         <li key={state}>

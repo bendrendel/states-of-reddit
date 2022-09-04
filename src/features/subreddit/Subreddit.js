@@ -19,25 +19,32 @@ function Subreddit() {
     }, []);
 
     return (
-        <div>
-            <p>{`r/${subreddit}`}</p>
-            <Search />
-
-            <p>isLoading: {isLoading ? 'true' : 'false'}</p>
-            <p>hasError: {hasError ? 'true' : 'false'}</p>
-
-            {posts && posts.map(post => (
-                <div>
-                    <p>posted by {`u/${post.data.author}`}</p>
-                    <p>diff: {timeSince(post.data.created_utc)}</p>
-                    <p>{post.data.title}</p>
-                    <p>{kmbt(post.data.ups)} {post.data.ups == 1 ? 'upvote' : 'upvotes'}</p>
-                    <p>{kmbt(post.data.num_comments)} {post.data.num_comments == 1 ? 'comment' : 'comments'}</p>
-                    <Link to={post.data.permalink}>Post Link</Link>
-                </div>
-            ))}
-            
-        </div>
+        <main className='subreddit-page'>
+            <header>
+                <h1>{`r/${subreddit}`}</h1>
+                <Search />                
+            </header>
+            <section>
+                <ul>
+                    {posts && posts.map(post => (
+                        <li key={post.data.id}>
+                            <article className="post-preview">
+                                <header>
+                                    <p>{`posted by u/${post.data.author} ${timeSince(post.data.created_utc)}`}</p>
+                                </header>
+                                <Link to={post.data.permalink}>
+                                    <h2>{post.data.title}</h2>
+                                </Link>
+                                <footer>
+                                    <p>{kmbt(post.data.ups)} {post.data.ups == 1 ? 'upvote' : 'upvotes'}</p>
+                                    <p>{kmbt(post.data.num_comments)} {post.data.num_comments == 1 ? 'comment' : 'comments'}</p>                            
+                                </footer>
+                            </article>                            
+                        </li>
+                    ))}                    
+                </ul>
+            </section>
+        </main>
     )
 }
 

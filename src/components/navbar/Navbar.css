@@ -4,21 +4,22 @@ ul {
     padding: 0;
 }
 
-#main-menu {
+.main-menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 50px;
+    z-index: 99;
     background-color: gray;
 }
 
-#main-menu ul {
+.main-menu ul {
     display: flex;
     justify-content: space-between;
 }
 
-#dropdown-menu {
+.dropdown-menu {
     position: fixed;
     top: 50px;
     bottom: 0;
@@ -31,6 +32,6 @@ ul {
     z-index: 100;
 }
 
-#dropdown-menu.hide {
+.dropdown-menu.hide {
     display: none;
 }
