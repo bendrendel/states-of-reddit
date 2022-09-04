@@ -23,7 +23,7 @@ function Navbar() {
                 <ul>
                     {states.map(state => (
                         <li key={state}>
-                            <NavLink to={`/r/${state.subreddit}/`}>
+                            <NavLink to={`/r/${state.subreddit}/`} onClick={handleClick}>
                                 {state.name}
                             </NavLink>
                         </li>
@@ -31,8 +31,6 @@ function Navbar() {
                 </ul>                
             </nav>
         </header>
-
-        
     )
 }
 
