@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 import './Post.css';
 import { fetchData, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
 import { timeSince, kmbt, percent } from '../../util/formatting';
@@ -19,30 +21,42 @@ function Post() {
     }, []);
 
     return (
-        <div>
-            <p>isLoading: {isLoading ? 'true' : 'false'}</p>
-            <p>hasError: {hasError ? 'true' : 'false'}</p>
+        <main className='post-page'>
             {post && (
-                <div>
-                    <p>{`r/${subreddit} - posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
-                    <p>{post.title}</p>
+                <article className='post'>
+                    <header>
+                        <p><strong>{`r/${subreddit}`}</strong>{` - posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
+                    </header>
                     
-                    {/\.jpg$/.test(post.url) ? <img src={post.url} /> : 'no image!'}
-                    
-                    <p>{percent(post.upvote_ratio)} upvoted</p>
-                    <p>{kmbt(post.num_comments)} comments</p>
+                    <section>
+                        <h1>{post.title}</h1>
 
-                    {comments.map(comment => (
-                        <div>
-                            <p>{comment.data.author}</p>
-                            <p>{timeSince(comment.data.created_utc)}</p>
-                            <p>{comment.data.body}</p>
-                            <p>{kmbt(comment.data.ups)} upvotes</p>
-                        </div>
-                    ))}                    
-                </div>
+                        {/\.jpg$/.test(post.url) ? <img src={post.url} /> : 'no image!'}
+
+                        <ReactMarkdown remarkPlugins={[gfm]} children={post.selftext} />
+                    </section>
+
+                    <footer>
+                        <p>{percent(post.upvote_ratio)} upvoted</p>
+                        <p>{kmbt(post.num_comments)} {post.num_comments == 1 ? 'comment' : 'comments'}</p>                        
+                    </footer>
+                </article>
             )}
-        </div>
+
+            <section className='comments'>
+                <ul>
+                    {post && (
+                        comments.map(comment => (
+                            <li key={comment.data.id}>
+                                <header><strong>{comment.data.author}</strong> {timeSince(comment.data.created_utc)}</header>
+                                <ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} />
+                                <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
+                            </li>
+                        ))
+                    )}
+                </ul>
+            </section>
+        </main>
     )
 }
 

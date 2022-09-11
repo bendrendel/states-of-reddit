@@ -1,0 +1,19 @@
+.post-page {
+    position: relative;
+    top: 50px;
+}
+
+.post img {
+    max-width: 60%;
+    max-height: auto;
+}
+
+.post footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments li {
+    padding: 10px;
+    border-top: 1px solid black;
+}

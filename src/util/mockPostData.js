@@ -12,7 +12,7 @@ export const data = [
                     data: {
                         approved_at_utc: null,
                         subreddit: "Colorado",
-                        selftext: "",
+                        selftext: "[Box Score provided by ESPN](http://www.espn.com/college-football/game?gameId=401403867) Team | 1 | 2 | 3 | 4 | T \n ----| -| -| -| -| -| - \n[Florida State](#f / floridastate) | 0 | 7 | 10 | 7 | 24 \n [LSU](#f / lsu) | 3 | 0 | 7 | 13 | 23 \n ### Made with the / r / CFB[Game Thread Generator](https://gamethread.redditcfb.com)",
                         user_reports: [],
                         saved: false,
                         mod_reason_title: null,
@@ -70,7 +70,7 @@ export const data = [
                         author_flair_type: "text",
                         domain: "i.redd.it",
                         allow_live_comments: true,
-                        selftext_html: null,
+                        selftext_html: "",
                         likes: null,
                         suggested_sort: null,
                         banned_at_utc: null,
