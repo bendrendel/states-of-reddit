@@ -22,9 +22,10 @@ function Navbar() {
             <nav className='dropdown-menu hide' id='dropdown-menu'>
                 <ul>
                     {states.map(state => (
-                        <li key={state}>
+                        <li key={state.name}>
                             <NavLink to={`/r/${state.subreddit}/`} onClick={handleClick}>
-                                {state.name}
+                                <img src={require(`./flags/${state.abbreviation.toLowerCase()}.svg`)} height='50' alt='flag' />
+                                <p>{state.name}</p>
                             </NavLink>
                         </li>
                     ))}
