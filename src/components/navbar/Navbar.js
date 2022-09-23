@@ -15,15 +15,15 @@ function Navbar() {
         <header>
             <nav className='main-menu'>
                 <ul>
-                    <li><Link to='/'><FontAwesomeIcon icon={faHouse} /></Link></li>
-                    <li><FontAwesomeIcon icon={faBars} onClick={handleClick} /></li>
+                    <li><Link to='/'><FontAwesomeIcon icon={faHouse} className='home-icon' /></Link></li>
+                    <li><FontAwesomeIcon icon={faBars} onClick={handleClick} className='hamburger-icon' /></li>
                 </ul>                
             </nav>
             <nav className='dropdown-menu hide' id='dropdown-menu'>
                 <ul>
                     {states.map(state => (
                         <li key={state.name}>
-                            <NavLink to={`/r/${state.subreddit}/`} onClick={handleClick}>
+                            <NavLink to={`/r/${state.subreddit}/`} onClick={handleClick} className='post-link'>
                                 <img src={require(`./flags/${state.abbreviation.toLowerCase()}.svg`)} height='50' alt='flag' />
                                 <p>{state.name}</p>
                             </NavLink>
