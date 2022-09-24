@@ -45,10 +45,10 @@ ul {
     bottom: 0;
     right: 0;
     left: 0;
+    padding: 10px 0;
     overflow-y: scroll;
     display: block;
     background-color: hsl(0,0%,100%);
-    width: 500px;
     z-index: 90;
 }
 
@@ -57,12 +57,27 @@ ul {
 }
 
 .post-link {
-    display: flex;
+    display: grid;
+    grid-template: 100% / 50px 1fr;
     align-items: center;
-    padding: 10px 20px;
+    justify-content: left;
+    justify-items: left;
+    padding: 10px 15px;
     text-decoration: none;
 }
 
 .post-link:hover {
     background-color: hsla(0, 0%, 0%, 0.25);
+}
+
+.post-link img {
+    height: 25px;
+    justify-self: center;
+}
+
+.post-link p {
+    padding: 0 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: hsl(0,0%,0%);
+    font-size: 18px;
 }
