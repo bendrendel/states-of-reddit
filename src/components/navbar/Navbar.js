@@ -9,18 +9,25 @@ import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons'
 function Navbar() {
     const handleHamburgerClick = (event) => {
         const dropdownMenu = document.getElementById('dropdown-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
         dropdownMenu.classList.toggle('hide');
+        hamburgerIcon.classList.toggle('open')
         event.stopPropagation();
     };
 
-    const handleNavLinkClick = () => {
+    const closeDropdown = () => {
         const dropdownMenu = document.getElementById('dropdown-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
         dropdownMenu.classList.add('hide');
+        hamburgerIcon.classList.remove('open')        
+    }
+
+    const handleNavLinkClick = () => {
+        closeDropdown();
     };
 
     const handleOutsideClick = () => {
-        const dropdownMenu = document.getElementById('dropdown-menu');
-        dropdownMenu.classList.add('hide');
+        closeDropdown();
     };
 
     const ref = useOutsideClick(handleOutsideClick);
@@ -30,7 +37,7 @@ function Navbar() {
             <nav className='main-menu'>
                 <ul>
                     <li><Link to='/'><FontAwesomeIcon icon={faHouse} className='home-icon' /></Link></li>
-                    <li><FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick} className='hamburger-icon' /></li>
+                    <li><FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick} className='hamburger-icon' id='hamburger-icon' /></li>
                 </ul>                
             </nav>
             <nav ref={ref} className='dropdown-menu hide' id='dropdown-menu'>
