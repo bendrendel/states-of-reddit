@@ -1,6 +1,10 @@
 .post-page {
-    position: relative;
+    position: absolute;
     top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
 }
 
 .post img {
