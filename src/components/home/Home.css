@@ -5,13 +5,30 @@
     left: 0;
     right: 0;
     overflow-y: auto;
-    padding: 100px 50px 0;
+    background-image: url('./images/brittney-weng-PGZ1BuBAw3E-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
 }
 
 .home-page h1 {
     text-align: center;
+    font-size: 40px;
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-weight: 800;
+    margin: 40px 50px 20px;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.2);
 }
 
 .home-page p {
-    text-align: justify;
+    text-align: center;
+    margin: 0px 50px;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.2);
+}
+
+.home-page em {
+    font-style: italic;
+    color: hsl(213, 81.3%, 21%);
 }
