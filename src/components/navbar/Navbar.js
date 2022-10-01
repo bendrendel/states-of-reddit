@@ -46,7 +46,7 @@ function Navbar() {
                         <li key={state.name}>
                             <NavLink to={`/r/${state.subreddit}/`} className='post-link' onClick={handleNavLinkClick}>
                                 <img src={require(`./images/${state.abbreviation.toLowerCase()}.svg`)} alt={`${state.name} State Flag`} />
-                                <p>{state.name}</p>
+                                <p>{state.name} subreddit</p>
                             </NavLink>
                         </li>
                     ))}
