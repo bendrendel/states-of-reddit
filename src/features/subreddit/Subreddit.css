@@ -13,11 +13,16 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    font-family: 'Goudy Bookman 1911', serif;
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: contain;
 }
 
 .post-preview {
     border-top: 1px black solid;
     padding: 10px;
+    font-family: 'Average Sans', sans-serif;
 }
 
 .post-preview>footer {

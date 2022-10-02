@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Subreddit.css';
+import { states } from '../../util/states';
 import Search from '../search/Search';
 import { fetchData, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 import { timeSince, kmbt } from '../../util/formatting';
@@ -14,13 +15,16 @@ function Subreddit() {
     const hasError = useSelector(selectHasError);
     const posts = useSelector(selectPosts);
 
+    const stateAbbreviation = states.find(state => state.subreddit === subreddit).abbreviation;
+    const stateFlag = require(`../../util/state-flags/${stateAbbreviation.toLowerCase()}.svg`);
+
     useEffect(() => {
         dispatch(fetchData('the subreddit api is working yo'))
     }, []);
 
     return (
         <main className='subreddit-page'>
-            <header>
+            <header style={{ backgroundImage: `url(${stateFlag})`}}>
                 <h1>{`r/${subreddit}`}</h1>
                 <Search />                
             </header>
@@ -28,7 +32,7 @@ function Subreddit() {
                 <ul>
                     {posts && posts.map(post => (
                         <li key={post.data.id}>
-                            <article className="post-preview">
+                            <article className='post-preview'>
                                 <header>
                                     <p>{`posted by u/${post.data.author} ${timeSince(post.data.created_utc)}`}</p>
                                 </header>

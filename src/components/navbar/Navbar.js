@@ -45,7 +45,7 @@ function Navbar() {
                     {states.map(state => (
                         <li key={state.name}>
                             <NavLink to={`/r/${state.subreddit}/`} className='post-link' onClick={handleNavLinkClick}>
-                                <img src={require(`./images/${state.abbreviation.toLowerCase()}.svg`)} alt={`${state.name} State Flag`} />
+                                <img src={require(`../../util/state-flags/${state.abbreviation.toLowerCase()}.svg`)} alt={`${state.name} State Flag`} />
                                 <p>{state.name} subreddit</p>
                             </NavLink>
                         </li>
