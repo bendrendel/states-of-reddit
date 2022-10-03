@@ -8,7 +8,7 @@
 }
 
 .subreddit-page>header {
-    height: 150px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -16,7 +16,7 @@
     font-family: 'Goudy Bookman 1911', serif;
     background-position: center;
     background-repeat: repeat-x;
-    background-size: contain;
+    background-size: auto 100%;
 }
 
 .post-preview {
