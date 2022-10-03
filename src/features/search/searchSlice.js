@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const searchSlice = createSlice({
     name: 'search',
     initialState: {
-        term: 'test search term'
+        term: ''
     },
     reducers: {
         setTerm(state, action) {
@@ -11,6 +11,8 @@ const searchSlice = createSlice({
         }
     }
 });
+
+export const selectTerm = store => store.search.term;
 
 export default searchSlice.reducer;
 export const { setTerm } = searchSlice.actions;

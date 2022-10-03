@@ -1,0 +1,31 @@
+.search-bar {
+    display: flex;
+    background-color: hsl(0, 0%, 80%);
+    align-items: center;
+    height: 36px;
+    border-radius: 18px;
+    width: 80%;
+    max-width: 250px;
+    
+}
+
+.search-bar input {
+    border: none;
+    background-color: transparent;
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-button, .clear-button {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.search-button:hover, .clear-button:hover {
+    cursor: pointer;
+}
