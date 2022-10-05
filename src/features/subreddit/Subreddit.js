@@ -24,26 +24,24 @@ function Subreddit() {
 
     return (
         <main className='subreddit-page'>
-            <header style={{ backgroundImage: `url(${stateFlag})`}}>
+            <header style={{ backgroundImage: `url(${stateFlag})`}} className='subreddit-header'>
                 <h1>{`r/${subreddit}`}</h1>
                 <Search />                
             </header>
-            <section>
+            <section className='subreddit-posts'>
                 <ul>
                     {posts && posts.map(post => (
                         <li key={post.data.id}>
-                            <article className='post-preview'>
+                            <Link to={post.data.permalink} className='post-preview'>
                                 <header>
                                     <p>{`posted by u/${post.data.author} ${timeSince(post.data.created_utc)}`}</p>
                                 </header>
-                                <Link to={post.data.permalink}>
-                                    <h2>{post.data.title}</h2>
-                                </Link>
+                                <h2>{post.data.title}</h2>
                                 <footer>
                                     <p>{kmbt(post.data.ups)} {post.data.ups == 1 ? 'upvote' : 'upvotes'}</p>
                                     <p>{kmbt(post.data.num_comments)} {post.data.num_comments == 1 ? 'comment' : 'comments'}</p>                            
                                 </footer>
-                            </article>                            
+                            </Link>                            
                         </li>
                     ))}                    
                 </ul>

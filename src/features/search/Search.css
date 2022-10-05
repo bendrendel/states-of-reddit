@@ -1,12 +1,11 @@
 .search-bar {
     display: flex;
-    background-color: hsl(0, 0%, 80%);
+    background-color: hsl(0, 0%, 100%);
     align-items: center;
     height: 36px;
     border-radius: 18px;
     width: 80%;
     max-width: 250px;
-    
 }
 
 .search-bar input {

@@ -5,27 +5,73 @@
     left: 0;
     right: 0;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 90%);
 }
 
-.subreddit-page>header {
+.subreddit-header {
     height: 200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    font-family: 'Goudy Bookman 1911', serif;
     background-position: center;
     background-repeat: repeat-x;
     background-size: auto 100%;
+    flex-shrink: 0;
+}
+
+.subreddit-header h1 {
+    font-family: 'Goudy Bookman 1911', serif;
+    font-size: 30px;
+}
+
+.subreddit-posts {
+    max-width: 800px;
 }
 
 .post-preview {
-    border-top: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid hsl(0, 0%, 70%);
+    border-bottom: 1px solid hsl(0, 0%, 70%);
     padding: 10px;
     font-family: 'Average Sans', sans-serif;
+    background-color:hsl(0, 0%, 100%);
+    margin: 12px 0 ;
+    text-decoration: none;
+    box-shadow: 0 0 4px 0 hsla(0, 0%, 0%, 0.1);
+    border-radius: 3px;
+}
+
+@media only screen and (min-width: 500px) {
+    .post-preview {
+        margin: 12px;
+        border: 1px solid hsl(0, 0%, 70%);
+    }
+}
+
+.post-preview:hover {
+    border-color: hsl(0, 0%, 45%);
+}
+
+.post-preview>header {
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+}
+
+.post-preview>h2 {
+    color: hsl(0, 0%, 0%);
+    margin: 10px 0;
+    font-size: 18px;
 }
 
 .post-preview>footer {
     display: flex;
     justify-content: space-between;
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
 }
