@@ -94,6 +94,7 @@ ul {
         width: 300px;
         right: 22px;
         bottom: 30px;
+        max-height: 1000px;
         left: auto;
         z-index: 110;
     }

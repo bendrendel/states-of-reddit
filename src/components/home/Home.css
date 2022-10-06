@@ -12,25 +12,38 @@
     background-image: url('./images/brittney-weng-PGZ1BuBAw3E-unsplash.jpg');
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    z-index: -200;
+}
+
+.home-page::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    z-index: -100;
+    background: linear-gradient(hsla(213, 81.3%, 21%, 0.5) 12%, hsla(0, 0%, 0%, 0) 40%);
 }
 
 .home-page h1 {
     font-size: 40px;
     font-family: 'Goudy Bookletter 1911', serif;
     font-weight: 800;
-    margin: 40px 50px 20px;
-    color: hsl(0, 0%, 100%);
-    text-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.2);
+    margin: 30px 50px 20px;
+    color: white;
+    text-shadow: 0px 0px 4px hsla(0, 0%, 0%, 1);
 }
 
 .home-page p {
     margin: 0px 50px;
-    color: hsl(0, 0%, 100%);
-    text-shadow: 2px 2px 4px hsla(0, 0%, 0%, 0.2);
+    color: white;
+    text-shadow: 0px 0px 4px hsla(0, 0%, 0%, 1);
+    font-size: 16px;
 }
 
 .home-page em {
     font-style: italic;
-    color: hsl(213, 81.3%, 21%);
+    color: hsl(344, 75.5%, 40%);
+    text-shadow: 0px 0px 4px hsla(0, 0%, 100%, 1);
 }
