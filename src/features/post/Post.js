@@ -28,13 +28,11 @@ function Post() {
                         <p><strong>{`r/${subreddit}`}</strong>{` - posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
                     </header>
                     
-                    <section>
-                        <h1>{post.title}</h1>
+                    <h1>{post.title}</h1>
 
-                        {/\.jpg$/.test(post.url) ? <img src={post.url} /> : 'no image!'}
+                    {/\.jpg$/.test(post.url) && <img src={post.url} />}
 
-                        <ReactMarkdown remarkPlugins={[gfm]} children={post.selftext} />
-                    </section>
+                    <div className="post-body"><ReactMarkdown remarkPlugins={[gfm]} children={post.selftext} /></div>
 
                     <footer>
                         <p>{percent(post.upvote_ratio)} upvoted</p>
@@ -47,9 +45,9 @@ function Post() {
                 <ul>
                     {post && (
                         comments.map(comment => (
-                            <li key={comment.data.id}>
+                            <li key={comment.data.id} className='comment'>
                                 <header><strong>{comment.data.author}</strong> {timeSince(comment.data.created_utc)}</header>
-                                <ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} />
+                                <p><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></p>
                                 <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
                             </li>
                         ))

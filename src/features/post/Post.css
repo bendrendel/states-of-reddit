@@ -5,19 +5,103 @@
     left: 0;
     right: 0;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 90%);
+}
+.post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    border-bottom: 1px solid hsl(0, 0%, 80%);
+    padding: 15px 20px;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.post>header {
+    font-size: 14px;
+    font-family: 'Average Sans', sans-serif;
+    margin-bottom: 10px;
+    color: hsl(0, 0%, 60%)
+}
+
+.post>header strong {
+    font-weight: 900;
+    color: hsl(0, 0%, 0%);
+}
+
+.post h1 {
+    font-family: 'Goudy Bookman 1911', serif;
+    font-size: 26px;
+    margin: 10px 0;
 }
 
 .post img {
-    max-width: 60%;
-    max-height: auto;
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    align-self: center;
+    margin: 10px 0;
+}
+
+.post-body {
+    font-family: 'Average Sans', sans-serif;
+    margin: 10px 0;
 }
 
 .post footer {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 10px;
+    font-family: 'Average Sans', sans-serif;
+    font-size: 14px;
+    color: hsl(0, 0%, 60%);
 }
 
-.comments li {
+.comments {
+    max-width: 800px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid hsl(0, 0%, 70%);
+    border-bottom: 1px solid hsl(0, 0%, 70%);
     padding: 10px;
-    border-top: 1px solid black;
+    font-family: 'Average Sans', sans-serif;
+    background-color: hsl(0, 0%, 100%);
+    margin: 0;
+    text-decoration: none;
+    box-shadow: 0 0 4px 0 hsla(0, 0%, 0%, 0.1);
+    border-radius: 3px;
+}
+
+@media only screen and (min-width: 500px) {
+    .comment {
+        margin: 0px;
+        border: 1px solid hsl(0, 0%, 70%);
+    }
+}
+
+.comment>header {
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+}
+
+.comment>p {
+    color: hsl(0, 0%, 0%);
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.comment>footer {
+    display: flex;
+    justify-content: space-between;
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
 }
