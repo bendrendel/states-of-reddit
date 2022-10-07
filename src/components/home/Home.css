@@ -4,46 +4,39 @@
     bottom: 0;
     left: 0;
     right: 0;
+    background-image: url('./images/brittney-weng-PGZ1BuBAw3E-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home-page>header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    background-image: url('./images/brittney-weng-PGZ1BuBAw3E-unsplash.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -200;
-}
-
-.home-page::before {
-    content: '';
-    height: 100%;
-    width: 100%;
-    background-color: red;
-    position: absolute;
-    z-index: -100;
-    background: linear-gradient(hsla(213, 81.3%, 21%, 0.5) 12%, hsla(0, 0%, 0%, 0) 40%);
+    padding: 30px 50px 120px;
+    background: linear-gradient(rgba(82, 82, 82, 0.5) 75%, hsla(0, 0%, 0%, 0) 100%);
 }
 
 .home-page h1 {
     font-size: 40px;
     font-family: 'Goudy Bookletter 1911', serif;
     font-weight: 800;
-    margin: 30px 50px 20px;
+    margin-bottom: 20px;
     color: white;
-    text-shadow: 0px 0px 4px hsla(0, 0%, 0%, 1);
+    text-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.5);
+    letter-spacing: 2px;
 }
 
 .home-page p {
-    margin: 0px 50px;
     color: white;
-    text-shadow: 0px 0px 4px hsla(0, 0%, 0%, 1);
+    text-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.5);
     font-size: 16px;
 }
 
 .home-page em {
     font-style: italic;
-    color: hsl(344, 75.5%, 40%);
-    text-shadow: 0px 0px 4px hsla(0, 0%, 100%, 1);
+    text-shadow: -2px 0px 4px hsla(344, 75.5%, 40%);
 }
