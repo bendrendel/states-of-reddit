@@ -37,8 +37,8 @@
 .post-preview {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid hsl(0, 0%, 70%);
-    border-bottom: 1px solid hsl(0, 0%, 70%);
+    border-top: 1px solid hsl(0, 0%, 80%);
+    border-bottom: 1px solid hsl(0, 0%, 80%);
     padding: 10px;
     font-family: 'Average Sans', sans-serif;
     background-color:hsl(0, 0%, 100%);
@@ -49,7 +49,8 @@
 @media only screen and (min-width: 500px) {
     .post-preview {
         margin: 12px;
-        border: 1px solid hsl(0, 0%, 70%);
+        border-left: 1px solid hsl(0, 0%, 80%);
+        border-right: 1px solid hsl(0, 0%, 80%);
     }
 }
 
