@@ -25,7 +25,7 @@ function Post() {
             {post && (
                 <article className='post'>
                     <header>
-                        <p><strong>{`r/${subreddit}`}</strong>{` - posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
+                        <p><strong>{`r/${subreddit}`}</strong>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
                     </header>
                     
                     <h1>{post.title}</h1>
@@ -46,8 +46,8 @@ function Post() {
                     {post && (
                         comments.map(comment => (
                             <li key={comment.data.id} className='comment'>
-                                <header><strong>{comment.data.author}</strong> {timeSince(comment.data.created_utc)}</header>
-                                <p><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></p>
+                                <header><strong>{comment.data.author}</strong> • {timeSince(comment.data.created_utc)}</header>
+                                <p className="comment-body"><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></p>
                                 <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
                             </li>
                         ))
