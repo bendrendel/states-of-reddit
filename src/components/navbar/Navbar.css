@@ -40,11 +40,11 @@ ul {
 }
 
 .home-icon:hover {
-    color: hsl(213, 30%, 40%);
+    color: hsl(213, 30%, 50%);
 }
 
 .home-icon:active {
-    color: hsl(213, 20%, 45%);
+    color: hsl(213, 20%, 40%);
 }
 
 /* Hamburger Icon */
