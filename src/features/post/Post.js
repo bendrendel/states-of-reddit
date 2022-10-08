@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
@@ -25,7 +25,7 @@ function Post() {
             {post && (
                 <article className='post'>
                     <header>
-                        <p><strong>{`r/${subreddit}`}</strong>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
+                        <p><Link to={`/r/${subreddit}`} className='subreddit-link'>{`r/${subreddit}`}</Link>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
                     </header>
                     
                     <h1>{post.title}</h1>

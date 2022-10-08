@@ -38,9 +38,14 @@
     color: hsl(0, 0%, 60%)
 }
 
-.post>header strong {
+.subreddit-link {
     font-weight: 900;
-    color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 30%);
+    text-decoration: none;
+}
+
+.subreddit-link:hover {
+    text-decoration: underline;
 }
 
 .post h1 {
@@ -114,7 +119,7 @@
 
 .comment strong {
     font-weight: 900;
-    color: hsl(0, 0%, 40%);
+    color: hsl(0, 0%, 30%);
 }
 
 .comment>p {
