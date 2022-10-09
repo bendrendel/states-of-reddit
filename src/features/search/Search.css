@@ -1,11 +1,17 @@
 .search-bar {
     display: flex;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 90%);
     align-items: center;
     height: 36px;
     border-radius: 18px;
     width: 80%;
     max-width: 250px;
+}
+
+.search-bar:hover,
+.search-bar:has(input:focus) {
+    background-color: hsl(0, 0%, 100%);
+    outline: 1px solid hsl(0, 0%, 50%);
 }
 
 .search-bar input {
@@ -23,6 +29,7 @@
 .search-button, .clear-button {
     font-size: 16px;
     margin: 0 10px;
+    color: hsl(0, 0%, 60%);
 }
 
 .search-button:hover, .clear-button:hover {

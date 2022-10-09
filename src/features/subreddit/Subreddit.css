@@ -11,6 +11,9 @@
     background-color: hsl(0, 0%, 90%);
 }
 
+
+/* Header Section */
+
 .subreddit-header {
     height: 200px;
     width: 100%;
@@ -27,8 +30,17 @@
 
 .subreddit-header h1 {
     font-family: 'Goudy Bookman 1911', serif;
-    font-size: 30px;
+    font-size: 36px;
+    color: hsl(0, 0, 20%);
+    background-color: hsla(0, 0%, 100%, 1);
+    padding: 12px 40px;
+    border-radius: 5px;
+    border: 4px solid hsl(0, 0%, 20%);
+    box-shadow: 0 0 1px 4px hsla(0, 0%, 100%, 1);
 }
+
+
+/* Post Section */
 
 .subreddit-posts {
     max-width: 800px;
