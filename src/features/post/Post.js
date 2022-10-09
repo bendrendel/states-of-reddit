@@ -47,7 +47,7 @@ function Post() {
                         comments.map(comment => (
                             <li key={comment.data.id} className='comment'>
                                 <header><strong>{comment.data.author}</strong> • {timeSince(comment.data.created_utc)}</header>
-                                <p className="comment-body"><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></p>
+                                <div className="comment-body"><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></div>
                                 <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
                             </li>
                         ))
