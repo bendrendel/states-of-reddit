@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Subreddit.css';
 import { states } from '../../util/states';
 import Search from '../search/Search';
+import Loading from '../../components/loading/Loading';
 import { fetchData, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 import { timeSince, kmbt } from '../../util/formatting';
 
@@ -30,11 +31,11 @@ function Subreddit() {
             </header>
 
             {isLoading && (
-                <div>Loading!!</div>
+                <Loading />
             )}
 
             {hasError && (
-                <div>Error!!</div>
+                <p className='error'>Sorry, we're having trouble loading these posts.<br/><br/>Please try again later.</p>
             )}
 
             {posts && (

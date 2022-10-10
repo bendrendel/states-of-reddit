@@ -1,0 +1,19 @@
+.loading-icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 5pt solid hsl(0, 0%, 100%);
+    border-top: 5pt solid hsl(213, 81.3%, 21%);
+    margin: 50px;
+    animation: spin 1s cubic-bezier(.5, 0, .5, 1) infinite
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

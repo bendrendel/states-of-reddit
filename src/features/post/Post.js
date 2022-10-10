@@ -6,6 +6,7 @@ import gfm from 'remark-gfm';
 import './Post.css';
 import { fetchData, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
 import { timeSince, kmbt, percent } from '../../util/formatting';
+import Loading from '../../components/loading/Loading';
 
 function Post() {
     const dispatch = useDispatch();
@@ -23,11 +24,11 @@ function Post() {
     return (
         <main className='post-page'>
             {isLoading && (
-                <div>Loading!!</div>
+                <Loading />
             )}
 
             {hasError && (
-                <div>Error!!</div>
+                <p className='error'>Sorry, we're having trouble loading this post.<br /><br />Please try again later.</p>
             )}
 
             {post && (
