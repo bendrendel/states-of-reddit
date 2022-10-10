@@ -4,8 +4,8 @@ import { fetchSubredditData } from '../../util/redditApi';
 export const fetchData = createAsyncThunk(
     'subreddit/fetchData',
     async (endpoint, thunkAPI) => {
-        const response = await fetchSubredditData(endpoint);
-        const json = response;
+        const response = await fetch(endpoint);
+        const json = await response.json();
         return json;
     }
 );
@@ -16,6 +16,13 @@ const subredditSlice = createSlice({
         data: null,
         isLoading: false,
         hasError: false
+    },
+    reducers: {
+        resetState(state, action) {
+            state.data = null;
+            state.isLoading = false;
+            state.hasError = false;
+        }
     },
     extraReducers: {
         [fetchData.pending]: (state, action) => {
@@ -39,3 +46,4 @@ export const selectHasError = store => store.subreddit.hasError;
 export const selectPosts = store => store.subreddit.data && store.subreddit.data.data.children;
 
 export default subredditSlice.reducer;
+export const { resetState } = subredditSlice.actions;

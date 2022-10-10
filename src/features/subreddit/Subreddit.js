@@ -5,7 +5,7 @@ import './Subreddit.css';
 import { states } from '../../util/states';
 import Search from '../search/Search';
 import Loading from '../../components/loading/Loading';
-import { fetchData, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
+import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 import { timeSince, kmbt } from '../../util/formatting';
 
 function Subreddit() {
@@ -20,8 +20,10 @@ function Subreddit() {
     const stateFlag = require(`../../util/state-flags/${stateAbbreviation.toLowerCase()}.svg`);
 
     useEffect(() => {
-        dispatch(fetchData('the subreddit api is working yo'))
-    }, []);
+        const endpoint = `https://www.reddit.com/r/${subreddit}.json`
+        dispatch(fetchData(endpoint))
+        return () => dispatch(resetState());
+    }, [subreddit]);
 
     return (
         <main className='subreddit-page'>
