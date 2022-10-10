@@ -1,25 +1,28 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useRouteMatch, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import './Post.css';
-import { fetchData, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
+import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
 import { timeSince, kmbt, percent } from '../../util/formatting';
 import Loading from '../../components/loading/Loading';
 
 function Post() {
     const dispatch = useDispatch();
     const { subreddit } = useParams();
-
+    const { url } = useRouteMatch();
+    
     const isLoading = useSelector(selectIsLoading);
     const hasError = useSelector(selectHasError);
     const post = useSelector(selectPost);
     const comments = useSelector(selectComments);
 
     useEffect(() => {
-        dispatch(fetchData('the post api is working yo'))
-    }, []);
+        const endpoint = `https://www.reddit.com/${url.slice(1, url.length-1)}.json`;
+        dispatch(fetchData(endpoint));
+        return () => dispatch(resetState());
+    }, [url]);
 
     return (
         <main className='post-page'>

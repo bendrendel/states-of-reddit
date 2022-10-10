@@ -4,8 +4,8 @@ import { fetchPostData } from '../../util/redditApi';
 export const fetchData = createAsyncThunk(
     'post/fetchData',
     async (endpoint, thunkAPI) => {
-        const response = await fetchPostData(endpoint);
-        const json = response;
+        const response = await fetch(endpoint);
+        const json = await response.json();
         return json;
     }
 );
@@ -16,6 +16,13 @@ const postSlice = createSlice({
         data: null,
         isLoading: false,
         hasError: false
+    },
+    reducers: {
+        resetState(state, action) {
+            state.data = null;
+            state.isLoading = false;
+            state.hasError = false;
+        }
     },
     extraReducers: {
         [fetchData.pending]: (state, action) => {
@@ -40,3 +47,4 @@ export const selectPost = state => state.post.data && state.post.data[0].data.ch
 export const selectComments = state => state.post.data && state.post.data[1].data.children;
 
 export default postSlice.reducer;
+export const { resetState } = postSlice.actions;
