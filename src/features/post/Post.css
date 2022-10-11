@@ -22,6 +22,7 @@
 /* Post */
 
 .post {
+    width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: column;
@@ -62,13 +63,23 @@
     margin: 10px 0;
 }
 
-.post img {
+.image-url {
+    align-self: center;
+    margin: 10px 0;
+}
+
+.image-url img {
     width: auto;
     max-width: 100%;
     height: auto;
     max-height: 800px;
-    align-self: center;
+}
+
+.link-url a {
+    display: block;
+    width: fit-content;
     margin: 10px 0;
+    word-break: break-word;
 }
 
 .post-body {
@@ -90,6 +101,7 @@
 /* Comments */
 
 .comments {
+    width: 100%;
     max-width: 800px;
     margin: 12px 0;
     border-top: 1px solid hsl(0, 0%, 80%);

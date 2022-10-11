@@ -35,35 +35,55 @@ function Post() {
             )}
 
             {post && (
-                <div>
-                    <article className='post'>
-                        <header>
-                            <p><Link to={`/r/${subreddit}`} className='subreddit-link'>{`r/${subreddit}`}</Link>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>    
-                        </header>
-                        
-                        <h1>{post.title}</h1>
+                <article className='post'>
+                    <header>
+                        <p><Link to={`/r/${subreddit}`} className='subreddit-link'>{`r/${subreddit}`}</Link>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
+                    </header>
+                    
+                    <h1>{post.title}</h1>
 
-                        {/\.jpg$/.test(post.url) && <img src={post.url} />}
+                    {
+                        /\.(jpg|png)$/.test(post.url)
+                        ?
+                        <div className='image-url'>
+                            <a href={post.url} target='_blank'>
+                                <img src={post.url} />
+                            </a>
+                        </div>
+                        :
+                        <div className='link-url'>
+                            {
+                                /\.(jpg|png)$/.test(post.thumbnail)
+                                &&
+                                <a href={post.url} target='_blank'>
+                                    <img src={post.thumbnail} />
+                                </a>
+                            }
+                            <a href={post.url} target='_blank'>{post.url}</a>
+                        </div>
+                    }
 
-                        <div className="post-body"><ReactMarkdown remarkPlugins={[gfm]} children={post.selftext} /></div>
+                    <div className="post-body"><ReactMarkdown remarkPlugins={[gfm]} children={post.selftext} /></div>
 
-                        <footer>
-                            <p>{percent(post.upvote_ratio)} upvoted</p>
-                            <p>{kmbt(post.num_comments)} {post.num_comments == 1 ? 'comment' : 'comments'}</p>                        
-                        </footer>
-                    </article>
-                    <section className='comments'>
-                        <ul>
-                            {comments.map(comment => (
-                                <li key={comment.data.id} className='comment'>
-                                    <header><strong>{comment.data.author}</strong> • {timeSince(comment.data.created_utc)}</header>
-                                    <div className="comment-body"><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></div>
-                                    <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
-                                </li>
-                            ))}
-                        </ul>
-                    </section>
-                </div>
+                    <footer>
+                        <p>{percent(post.upvote_ratio)} upvoted</p>
+                        <p>{kmbt(post.num_comments)} {post.num_comments == 1 ? 'comment' : 'comments'}</p>
+                    </footer>
+                </article>
+            )}
+
+            {(comments && comments.length > 0) && (
+                <section className='comments'>
+                    <ul>
+                        {comments.map(comment => (
+                            <li key={comment.data.id} className='comment'>
+                                <header><strong>{comment.data.author}</strong> • {timeSince(comment.data.created_utc)}</header>
+                                <div className="comment-body"><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></div>
+                                <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
             )}
         </main>
     )
