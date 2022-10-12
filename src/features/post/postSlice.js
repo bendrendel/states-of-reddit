@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchPostData } from '../../util/redditApi';
 
 export const fetchData = createAsyncThunk(
     'post/fetchData',

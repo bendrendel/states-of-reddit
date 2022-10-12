@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchSubredditData } from '../../util/redditApi';
 
 export const fetchData = createAsyncThunk(
     'subreddit/fetchData',
