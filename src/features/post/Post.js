@@ -6,6 +6,7 @@ import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, sel
 import { timeSince, kmbt, percent, unescape } from '../../util/formatting';
 import Loading from '../../components/loading/Loading';
 import Markdown from '../../components/markdown/Markdown';
+import Error from '../../components/error/Error';
 
 function Post() {
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function Post() {
             )}
 
             {hasError && (
-                <p className='error'>Sorry, we're having trouble loading this post.<br /><br />Please try again later.</p>
+                <Error />
             )}
 
             {post && (

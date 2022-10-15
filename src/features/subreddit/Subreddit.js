@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Subreddit.css';
+import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 import { states } from '../../util/states';
+import { timeSince, kmbt } from '../../util/formatting';
 import Search from '../search/Search';
 import Loading from '../../components/loading/Loading';
-import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
-import { timeSince, kmbt } from '../../util/formatting';
+import Error from '../../components/error/Error';
 
 function Subreddit() {
     const dispatch = useDispatch();
@@ -37,7 +38,7 @@ function Subreddit() {
             )}
 
             {hasError && (
-                <p className='error'>Sorry, we're having trouble loading these posts.<br/><br/>Please try again later.</p>
+                <Error />
             )}
 
             {posts && (

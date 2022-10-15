@@ -1,0 +1,9 @@
+.error {
+    font-family: 'Average Sans', sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.error p {
+    margin: 20px;
+}
