@@ -39,7 +39,7 @@ function Post() {
                         <p><Link to={`/r/${subreddit}`} className='subreddit-link'>{`r/${subreddit}`}</Link>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
                     </header>
                     
-                    <h1>{unescape(post.title)}</h1>
+                    <h1 className='post-title'>{unescape(post.title)}</h1>
 
                     {
                         /\.(jpg|png)$/.test(post.url)
@@ -66,7 +66,7 @@ function Post() {
                         </div>
                     }
 
-                    <div className="post-body"><Markdown content={post.selftext} /></div>
+                    <Markdown content={post.selftext} />
 
                     <footer>
                         <p>{percent(post.upvote_ratio)} upvoted</p>

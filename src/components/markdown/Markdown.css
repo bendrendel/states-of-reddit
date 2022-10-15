@@ -1,5 +1,15 @@
+.markdown {
+    font-family: 'Average Sans', sans-serif;
+    margin-top: -15px;
+    margin-bottom: -10px;
+}
+
 .markdown p {
-    padding: 10px 0 5px;
+    margin: 15px 0 10px;
+}
+
+.markdown a {
+    color: hsl(213, 81.3%, 21%);
 }
 
 .markdown strong {
@@ -11,10 +21,25 @@
 }
 
 .markdown blockquote {
-    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: 10px;
     padding-left: 5px;
     border-left: 3px solid hsl(0, 0%, 80%);
+}
+
+.markdown li {
+    margin: 15px 0 10px;
+}
+
+.markdown ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.markdown ol {
+    list-style: decimal;
+    padding-left: 25px;
 }
 
 .markdown h1,
@@ -23,44 +48,30 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-    padding: 30px 0 0px;
+    margin: 30px 0 15px;
     font-family: 'Goudy Bookman 1911', serif;
 }
 
 .markdown h1 {
-    font-size: 26px;
+    font-size: 1.6em;
 }
 
 .markdown h2 {
-    font-size: 24px;
+    font-size: 1.5em;
 }
 
 .markdown h3 {
-    font-size: 22px;
+    font-size: 1.4em;
 }
 
 .markdown h4 {
-    font-size: 20px;
+    font-size: 1.3em;
 }
 
 .markdown h5 {
-    font-size: 18px;
+    font-size: 1.2em;
 }
 
 .markdown h6 {
-    font-size: 16px;
-}
-
-.markdown li {
-    padding: 10px 0;
-}
-
-.markdown ul {
-    list-style: disc;
-    margin-left: 15px;
-}
-
-.markdown ol {
-    list-style: decimal;
-    margin-left: 15px;
+    font-size: 1.1em;
 }

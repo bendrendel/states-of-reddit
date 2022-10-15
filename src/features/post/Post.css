@@ -59,10 +59,10 @@
     text-decoration: underline;
 }
 
-.post h1 {
+.post-title {
     font-family: 'Goudy Bookman 1911', serif;
-    font-size: 26px;
-    margin: 10px 0;
+    font-size: 28px;
+    margin: 10px 0 15px;
 }
 
 .image-url {
@@ -83,16 +83,11 @@
     margin: 10px 0;
 }
 
-.post-body {
-    font-family: 'Average Sans', sans-serif;
-    margin: 10px 0;
-}
-
 .post footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
     font-family: 'Average Sans', sans-serif;
     font-size: 14px;
     color: hsl(0, 0%, 60%);

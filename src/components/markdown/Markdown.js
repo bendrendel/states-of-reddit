@@ -5,10 +5,11 @@ import { unescape } from '../../util/formatting';
 import './Markdown.css';
 
 function Markdown({ content }) {
-    const formattedContent = unescape(content).replace(/^#+/gm, match => `${match} `);
+    const formattedContent = unescape(content)
+        .replace(/^#+/gm, match => `${match} `);
 
     return (
-        <ReactMarkdown className='markdown' plugins={[RemarkGFM]} children={formattedContent} />
+        <ReactMarkdown className='markdown' plugins={[RemarkGFM]} linkTarget={'_blank'} children={formattedContent} />
     );
 }
 
