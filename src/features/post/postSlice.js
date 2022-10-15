@@ -43,7 +43,7 @@ const postSlice = createSlice({
 export const selectIsLoading = state => state.post.isLoading;
 export const selectHasError = state => state.post.hasError;
 export const selectPost = state => state.post.data && state.post.data[0].data.children[0].data;
-export const selectComments = state => state.post.data && state.post.data[1].data.children;
+export const selectComments = state => state.post.data && state.post.data[1].data.children.filter(elem => elem.kind === 't1').map(elem => elem.data);
 
 export default postSlice.reducer;
 export const { resetState } = postSlice.actions;

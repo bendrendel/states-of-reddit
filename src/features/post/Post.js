@@ -59,11 +59,15 @@ function Post() {
                                     <img src={post.thumbnail} />
                                 </a>
                             }
-                            <a href={post.url} target='_blank'>{post.url}</a>
+                            {
+                                !post.url.includes(post.permalink)
+                                &&
+                                <a href={post.url} target='_blank'>{post.url}</a>
+                            }
                         </div>
                     }
 
-                    <div className="post-body"><ReactMarkdown remarkPlugins={[gfm]} children={post.selftext} /></div>
+                    <div className="post-body markdown"><ReactMarkdown remarkPlugins={[gfm]} children={post.selftext.replace(/^#+/gm, match => `${match} `).replace(/&gt;/g, '>')} /></div>
 
                     <footer>
                         <p>{percent(post.upvote_ratio)} upvoted</p>
@@ -76,10 +80,10 @@ function Post() {
                 <section className='comments'>
                     <ul>
                         {comments.map(comment => (
-                            <li key={comment.data.id} className='comment'>
-                                <header><strong>{comment.data.author}</strong> • {timeSince(comment.data.created_utc)}</header>
-                                <div className="comment-body"><ReactMarkdown remarkPlugins={[gfm]} children={comment.data.body} /></div>
-                                <footer>{kmbt(comment.data.ups)} {comment.data.ups == 1 ? 'upvote' : 'upvotes'}</footer>
+                            <li key={comment.id} className='comment'>
+                                <header><strong>{comment.author}</strong> • {timeSince(comment.created_utc)}</header>
+                                <div className="comment-body markdown"><ReactMarkdown remarkPlugins={[gfm]} children={comment.body.replace(/^#+/gm, match => `${match} `)} /></div>
+                                <footer>{kmbt(comment.ups)} {comment.ups == 1 ? 'upvote' : 'upvotes'}</footer>
                             </li>
                         ))}
                     </ul>
