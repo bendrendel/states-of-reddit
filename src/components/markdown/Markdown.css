@@ -1,0 +1,66 @@
+.markdown p {
+    padding: 10px 0 5px;
+}
+
+.markdown strong {
+    font-weight: bold;
+}
+
+.markdown em {
+    font-style: italic;
+}
+
+.markdown blockquote {
+    margin: 10px;
+    margin-left: 10px;
+    padding-left: 5px;
+    border-left: 3px solid hsl(0, 0%, 80%);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+    padding: 30px 0 0px;
+    font-family: 'Goudy Bookman 1911', serif;
+}
+
+.markdown h1 {
+    font-size: 26px;
+}
+
+.markdown h2 {
+    font-size: 24px;
+}
+
+.markdown h3 {
+    font-size: 22px;
+}
+
+.markdown h4 {
+    font-size: 20px;
+}
+
+.markdown h5 {
+    font-size: 18px;
+}
+
+.markdown h6 {
+    font-size: 16px;
+}
+
+.markdown li {
+    padding: 10px 0;
+}
+
+.markdown ul {
+    list-style: disc;
+    margin-left: 15px;
+}
+
+.markdown ol {
+    list-style: decimal;
+    margin-left: 15px;
+}

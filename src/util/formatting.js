@@ -52,3 +52,17 @@ export const kmbt = (number) => {
 export const percent = (decimal) => {
     return `${(decimal * 100).toFixed(0)}%`;
 }
+
+export const unescape = (string) => {
+    console.log(string);
+    const greaterThan = '&gt;';
+    const lessThan = '&lt;';
+    const ampersand = '&amp;';
+
+    const escapedString = string
+        .replaceAll(greaterThan, '>')
+        .replaceAll(lessThan, '<')
+        .replaceAll(ampersand, '&');
+    
+    return escapedString;
+}

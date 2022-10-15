@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams, useRouteMatch, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
 import './Post.css';
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
-import { timeSince, kmbt, percent } from '../../util/formatting';
+import { timeSince, kmbt, percent, unescape } from '../../util/formatting';
 import Loading from '../../components/loading/Loading';
+import Markdown from '../../components/markdown/Markdown';
 
 function Post() {
     const dispatch = useDispatch();
@@ -40,7 +39,7 @@ function Post() {
                         <p><Link to={`/r/${subreddit}`} className='subreddit-link'>{`r/${subreddit}`}</Link>{` • posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
                     </header>
                     
-                    <h1>{post.title}</h1>
+                    <h1>{unescape(post.title)}</h1>
 
                     {
                         /\.(jpg|png)$/.test(post.url)
@@ -67,7 +66,7 @@ function Post() {
                         </div>
                     }
 
-                    <div className="post-body markdown"><ReactMarkdown remarkPlugins={[gfm]} children={post.selftext.replace(/^#+/gm, match => `${match} `).replace(/&gt;/g, '>')} /></div>
+                    <div className="post-body"><Markdown content={post.selftext} /></div>
 
                     <footer>
                         <p>{percent(post.upvote_ratio)} upvoted</p>
@@ -82,7 +81,7 @@ function Post() {
                         {comments.map(comment => (
                             <li key={comment.id} className='comment'>
                                 <header><strong>{comment.author}</strong> • {timeSince(comment.created_utc)}</header>
-                                <div className="comment-body markdown"><ReactMarkdown remarkPlugins={[gfm]} children={comment.body.replace(/^#+/gm, match => `${match} `)} /></div>
+                                <div className="comment-body"><Markdown content={comment.body} /></div>
                                 <footer>{kmbt(comment.ups)} {comment.ups == 1 ? 'upvote' : 'upvotes'}</footer>
                             </li>
                         ))}
