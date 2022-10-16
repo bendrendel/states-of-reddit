@@ -6,10 +6,11 @@ import './Markdown.css';
 
 function Markdown({ content }) {
     const formattedContent = unescape(content)
-        .replace(/^#+/gm, match => `${match} `);
+        .replace(/^#+/gm, match => `${match} `)
+        .replace(/\|/g, match => `${match} `);
 
     return (
-        <ReactMarkdown className='markdown' plugins={[RemarkGFM]} linkTarget={'_blank'} children={formattedContent} />
+        <ReactMarkdown className='markdown' remarkPlugins={[RemarkGFM]} linkTarget={'_blank'} children={formattedContent} />
     );
 }
 
