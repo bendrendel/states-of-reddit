@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setTerm, selectTerm } from './searchSlice';
-import './Search.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
+import './Search.css';
+import { setTerm, selectTerm } from './searchSlice';
+import { fetchData } from '../subreddit/subredditSlice';
 
 function Search() {
     const dispatch = useDispatch();
@@ -12,6 +13,8 @@ function Search() {
     const { subreddit } = useParams();
 
     const handleSubmit = (event) => {
+        const endpoint = `https://www.reddit.com/r/${subreddit}/search.json?q=${searchTerm}&restrict_sr=1`;
+        fetchData(endpoint);
         event.preventDefault();
     }
 

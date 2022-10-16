@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Subreddit.css';
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 import { states } from '../../util/states';
-import { timeSince, kmbt } from '../../util/formatting';
+import { timeSince, kmbt, unescape } from '../../util/formatting';
 import Search from '../search/Search';
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
@@ -50,7 +50,7 @@ function Subreddit() {
                                     <header>
                                         <p>{`posted by u/${post.data.author} ${timeSince(post.data.created_utc)}`}</p>
                                     </header>
-                                    <h2>{post.data.title}</h2>
+                                    <h2>{unescape(post.data.title)}</h2>
                                     <footer>
                                         <p>{kmbt(post.data.ups)} {post.data.ups == 1 ? 'upvote' : 'upvotes'}</p>
                                         <p>{kmbt(post.data.num_comments)} {post.data.num_comments == 1 ? 'comment' : 'comments'}</p>                            
