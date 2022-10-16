@@ -54,7 +54,6 @@ export const percent = (decimal) => {
 }
 
 export const unescape = (string) => {
-    console.log(string);
     const greaterThan = '&gt;';
     const lessThan = '&lt;';
     const ampersand = '&amp;';
