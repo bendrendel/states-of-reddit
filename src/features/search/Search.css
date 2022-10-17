@@ -1,6 +1,6 @@
 .search-bar {
     display: flex;
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 84%);
     align-items: center;
     height: 36px;
     border-radius: 18px;
@@ -11,7 +11,7 @@
 .search-bar:hover,
 .search-bar:has(input:focus) {
     background-color: hsl(0, 0%, 100%);
-    outline: 1px solid hsl(0, 0%, 50%);
+    outline: 1px solid hsl(0, 0%, 75%);
 }
 
 .search-bar input {
@@ -26,12 +26,20 @@
     outline: none;
 }
 
-.search-button, .clear-button {
+.search-button, 
+.clear-button {
     font-size: 16px;
     margin: 0 10px;
     color: hsl(0, 0%, 60%);
 }
 
-.search-button:hover, .clear-button:hover {
+.search-button:hover, 
+.clear-button:hover {
     cursor: pointer;
+    color: hsl(0, 0%, 50%);
+}
+
+.search-button:active,
+.clear-button:active {
+    color: hsl(0, 0%, 30%);
 }

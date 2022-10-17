@@ -14,7 +14,7 @@ function App() {
 				<Route exact path='/'>
 					<Home />
 				</Route>
-				<Route exact path='/r/:subreddit'>
+				<Route exact path={['/r/:subreddit', '/r/:subreddit/search']}>
 					<Subreddit />
 				</Route>
 				<Route path='/r/:subreddit/comments/:postid/:postname'>

@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useMemo } from 'react';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Subreddit.css';
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
+import { setTerm } from '../search/searchSlice';
 import { states } from '../../util/states';
 import { timeSince, kmbt, unescape } from '../../util/formatting';
 import Search from '../search/Search';
@@ -12,6 +13,9 @@ import Error from '../../components/error/Error';
 function Subreddit() {
     const dispatch = useDispatch();
     const { subreddit } = useParams();
+    const { search } = useLocation();
+    const queryParams = useMemo(() => { return new URLSearchParams(search) }, [search]);
+    const searchQuery = queryParams.get('q');
 
     const isLoading = useSelector(selectIsLoading);
     const hasError = useSelector(selectHasError);
@@ -21,15 +25,16 @@ function Subreddit() {
     const stateFlag = require(`../../util/state-flags/${stateAbbreviation.toLowerCase()}.svg`);
 
     useEffect(() => {
-        const endpoint = `https://www.reddit.com/r/${subreddit}.json`
-        dispatch(fetchData(endpoint))
+        dispatch(setTerm(searchQuery ? decodeURIComponent(searchQuery) : ''))
+        const endpoint = searchQuery ? `https://www.reddit.com/r/${subreddit}/search.json?q=${searchQuery}&restrict_sr=1` : `https://www.reddit.com/r/${subreddit}.json`;
+        dispatch(fetchData(endpoint));
         return () => dispatch(resetState());
-    }, [subreddit]);
+    }, [subreddit, searchQuery]);
 
     return (
         <main className='subreddit-page'>
             <header style={{ backgroundImage: `url(${stateFlag})`}} className='subreddit-header'>
-                <h1>{`r/${subreddit}`}</h1>
+                <Link to={`/r/${subreddit}`}><h1>{`r/${subreddit}`}</h1></Link>
                 <Search />                
             </header>
 
@@ -43,6 +48,7 @@ function Subreddit() {
 
             {posts && (
                 <section className='subreddit-posts'>
+                    {posts.length === 0 && (<p className='no-posts'>No posts found</p>)}
                     <ul>
                         {posts.map(post => (
                             <li key={post.id}>
@@ -52,8 +58,8 @@ function Subreddit() {
                                     </header>
                                     <h2>{unescape(post.title)}</h2>
                                     <footer>
-                                        <p>{kmbt(post.ups)} {post.ups == 1 ? 'upvote' : 'upvotes'}</p>
-                                        <p>{kmbt(post.num_comments)} {post.num_comments == 1 ? 'comment' : 'comments'}</p>                            
+                                        <p>{kmbt(post.ups)} {post.ups === 1 ? 'upvote' : 'upvotes'}</p>
+                                        <p>{kmbt(post.num_comments)} {post.num_comments === 1 ? 'comment' : 'comments'}</p>                            
                                     </footer>
                                 </Link>                            
                             </li>

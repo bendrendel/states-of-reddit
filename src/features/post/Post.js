@@ -47,7 +47,7 @@ function Post() {
                         ?
                         <div className='image-url'>
                             <a href={post.url} target='_blank'>
-                                <img src={post.url} />
+                                <img src={post.url} alt='Uploaded jpg or png for post'/>
                             </a>
                         </div>
                         :
@@ -56,7 +56,7 @@ function Post() {
                                 /\.(jpg|png)$/.test(post.thumbnail)
                                 &&
                                 <a href={post.url} target='_blank'>
-                                    <img src={post.thumbnail} />
+                                    <img src={post.thumbnail} alt='Uploaded thumbnail for post' />
                                 </a>
                             }
                             {
@@ -71,7 +71,7 @@ function Post() {
 
                     <footer>
                         <p>{percent(post.upvote_ratio)} upvoted</p>
-                        <p>{kmbt(post.num_comments)} {post.num_comments == 1 ? 'comment' : 'comments'}</p>
+                        <p>{kmbt(post.num_comments)} {post.num_comments === 1 ? 'comment' : 'comments'}</p>
                     </footer>
                 </article>
             )}
@@ -83,7 +83,7 @@ function Post() {
                             <li key={comment.id} className='comment'>
                                 <header><strong>{comment.author}</strong> • {timeSince(comment.created_utc)}</header>
                                 <div className="comment-body"><Markdown content={comment.body} /></div>
-                                <footer>{kmbt(comment.ups)} {comment.ups == 1 ? 'upvote' : 'upvotes'}</footer>
+                                <footer>{kmbt(comment.ups)} {comment.ups === 1 ? 'upvote' : 'upvotes'}</footer>
                             </li>
                         ))}
                     </ul>
