@@ -14,9 +14,7 @@ function Search() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('state searchTerm: ' + searchTerm)
-        const path = searchTerm === '' ? `/r/${subreddit}` : `/r/${subreddit}/search?q=${encodeURIComponent(searchTerm)}&restrict_sr=1`;
-        history.push(path);
+        searchTerm !== '' && history.push(`/r/${subreddit}/search?q=${encodeURIComponent(searchTerm)}&restrict_sr=1`);
     };
 
     const handleChange = (event) => {

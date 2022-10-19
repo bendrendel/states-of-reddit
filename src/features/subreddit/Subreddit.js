@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import './Subreddit.css';
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 import { setTerm } from '../search/searchSlice';
@@ -48,6 +50,7 @@ function Subreddit() {
 
             {posts && (
                 <section className='subreddit-posts'>
+                    {searchQuery && (<p className='search-message'>Showing search results for "{decodeURIComponent(searchQuery)}"<FontAwesomeIcon icon={faCircleXmark} /></p>)}
                     {posts.length === 0 && (<p className='no-posts'>No posts found</p>)}
                     <ul>
                         {posts.map(post => (
