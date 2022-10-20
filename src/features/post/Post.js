@@ -52,8 +52,8 @@ function Post() {
 
                     {post.post_hint === 'hosted:video' && (
                         <div className='video-url'>
-                            <a href={post.url} target='_blank'>
-                                <video controls src={post.media.reddit_video.fallback_url}></video>
+                            <a href={post.media.reddit_video.fallback_url} target='_blank'>
+                                <video controls autoplay='autoplay' muted src={post.media.reddit_video.fallback_url}>Your browser does not support embedded video</video>
                             </a>
                         </div>
                     )}
