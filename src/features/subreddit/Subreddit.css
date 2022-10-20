@@ -55,9 +55,18 @@
 
 .search-message {
     padding: 10px 15px 5px;
-    color: hsl(0, 0%, 25%);
+    color: hsl(0, 0%, 35%);
     font-style: italic;
     text-align: left;
+}
+
+.clear-search {
+    color: hsl(0, 0%, 35%);
+    margin: 0 10px;
+}
+
+.clear-search:hover {
+    cursor: pointer;
 }
 
 .no-posts {

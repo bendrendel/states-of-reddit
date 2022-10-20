@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import './Subreddit.css';
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
-import { setTerm } from '../search/searchSlice';
 import { states } from '../../util/states';
 import { timeSince, kmbt, unescape } from '../../util/formatting';
 import Search from '../search/Search';
@@ -27,7 +26,6 @@ function Subreddit() {
     const stateFlag = require(`../../util/state-flags/${stateAbbreviation.toLowerCase()}.svg`);
 
     useEffect(() => {
-        dispatch(setTerm(searchQuery ? decodeURIComponent(searchQuery) : ''))
         const endpoint = searchQuery ? `https://www.reddit.com/r/${subreddit}/search.json?q=${searchQuery}&restrict_sr=1` : `https://www.reddit.com/r/${subreddit}.json`;
         dispatch(fetchData(endpoint));
         return () => dispatch(resetState());
@@ -50,7 +48,7 @@ function Subreddit() {
 
             {posts && (
                 <section className='subreddit-posts'>
-                    {searchQuery && (<p className='search-message'>Showing search results for "{decodeURIComponent(searchQuery)}"<FontAwesomeIcon icon={faCircleXmark} /></p>)}
+                    {searchQuery && (<p className='search-message'>Showing search results for "{decodeURIComponent(searchQuery)}"<Link to={`/r/${subreddit}`} className='clear-search'><FontAwesomeIcon icon={faCircleXmark} /></Link></p>)}
                     {posts.length === 0 && (<p className='no-posts'>No posts found</p>)}
                     <ul>
                         {posts.map(post => (
