@@ -18,11 +18,11 @@
     text-align: center;
     padding: calc(4vh) 50px 0;
     height: calc(50vh - 15vw);
-    background: linear-gradient(hsla(0, 0%, 16%, 0.5) 75%, hsla(0, 0%, 0%, 0) 100%);
+    background: linear-gradient(hsla(0, 0%, 0%, 0.5) 75%, hsla(0, 0%, 100%, 0) 100%);
 }
 
 .home-page h1 {
-    font-size: calc(40px + 0.75vw);
+    font-size: calc(40px + 0.8vw);
     font-family: 'Goudy Bookletter 1911', serif;
     font-weight: 800;
     margin-bottom: 20px;
@@ -34,7 +34,7 @@
 .home-page p {
     color: white;
     text-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.5);
-    font-size: calc(16px + 0.25vw);
+    font-size: calc(17px + 0.3vw);
 }
 
 .home-page em {
