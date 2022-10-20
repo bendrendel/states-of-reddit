@@ -42,15 +42,23 @@ function Post() {
                     
                     <h1 className='post-title'>{unescape(post.title)}</h1>
 
-                    {
-                        /\.(jpg|png)$/.test(post.url)
-                        ?
+                    {post.post_hint === 'image' && (
                         <div className='image-url'>
                             <a href={post.url} target='_blank'>
-                                <img src={post.url} alt='Uploaded jpg or png for post'/>
+                                <img src={post.url} alt='Uploaded jpg or png for post' />
                             </a>
                         </div>
-                        :
+                    )}
+
+                    {post.post_hint === 'hosted:video' && (
+                        <div className='video-url'>
+                            <a href={post.url} target='_blank'>
+                                <video controls src={post.media.reddit_video.fallback_url}></video>
+                            </a>
+                        </div>
+                    )}
+
+                    {(post.post_hint !== 'image' && post.post_hint !== 'hosted:video') && (
                         <div className='link-url'>
                             {
                                 /\.(jpg|png)$/.test(post.thumbnail)
@@ -65,7 +73,8 @@ function Post() {
                                 <a href={post.url} target='_blank'>{post.url}</a>
                             }
                         </div>
-                    }
+                    )}
+
 
                     <Markdown content={post.selftext} />
 

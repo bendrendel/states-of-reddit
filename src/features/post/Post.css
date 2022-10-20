@@ -58,12 +58,14 @@
     margin: 10px 0 15px;
 }
 
-.image-url {
+.image-url,
+.video-url {
     align-self: center;
     margin: 10px 0;
 }
 
-.image-url img {
+.image-url img,
+.video-url video {
     width: auto;
     max-width: 100%;
     height: auto;
