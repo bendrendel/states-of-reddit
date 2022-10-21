@@ -21,18 +21,18 @@
     border-color: hsl(0, 0%, 55%);
 }
 
-.post-preview>header {
+.post-preview > header {
     color: hsl(0, 0%, 60%);
     font-size: 14px;
 }
 
-.post-preview>h2 {
+.post-preview > h2 {
     color: hsl(0, 0%, 0%);
     margin: 10px 0;
     font-size: 18px;
 }
 
-.post-preview>footer {
+.post-preview > footer {
     display: flex;
     justify-content: space-between;
     color: hsl(0, 0%, 60%);

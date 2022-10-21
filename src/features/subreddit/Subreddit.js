@@ -4,14 +4,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
-import Search from '../search/Search';
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
 import PostPreview from './post-preview/PostPreview';
+import SubredditHeader from './subreddit-header/SubredditHeader';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
-
-import { states } from '../../util/states';
 
 import './Subreddit.css';
 
@@ -26,9 +24,6 @@ function Subreddit() {
     const hasError = useSelector(selectHasError);
     const posts = useSelector(selectPosts);
 
-    const stateAbbreviation = states.find(state => state.subreddit === subreddit).abbreviation;
-    const stateFlag = require(`../../util/state-flags/${stateAbbreviation.toLowerCase()}.svg`);
-
     useEffect(() => {
         const endpoint = searchQuery ? `https://www.reddit.com/r/${subreddit}/search.json?q=${searchQuery}&restrict_sr=1` : `https://www.reddit.com/r/${subreddit}.json`;
         dispatch(fetchData(endpoint));
@@ -37,20 +32,11 @@ function Subreddit() {
 
     return (
         <main className='subreddit-page'>
-            <header style={{ backgroundImage: `url(${stateFlag})`}} className='subreddit-header'>
-                <Link to={`/r/${subreddit}`}>
-                    <h1>{`r/${subreddit}`}</h1>
-                </Link>
-                <Search />                
-            </header>
+            <SubredditHeader subreddit={subreddit} />
 
-            {isLoading && (
-                <Loading />
-            )}
+            {isLoading && <Loading />}
 
-            {hasError && (
-                <Error />
-            )}
+            {hasError && <Error />}
 
             {posts && (
                 <section className='subreddit-posts'>
