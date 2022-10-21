@@ -1,0 +1,40 @@
+.post-preview {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid hsl(0, 0%, 85%);
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    padding: 10px;
+    font-family: 'Average Sans', sans-serif;
+    background-color: hsl(0, 0%, 100%);
+    margin: 12px 0;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 500px) {
+    .post-preview {
+        border-left: 1px solid hsl(0, 0%, 80%);
+        border-right: 1px solid hsl(0, 0%, 80%);
+    }
+}
+
+.post-preview:hover {
+    border-color: hsl(0, 0%, 55%);
+}
+
+.post-preview>header {
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+}
+
+.post-preview>h2 {
+    color: hsl(0, 0%, 0%);
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.post-preview>footer {
+    display: flex;
+    justify-content: space-between;
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+}
