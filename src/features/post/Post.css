@@ -12,6 +12,12 @@
     line-height: normal;
 }
 
+@media only screen and (min-width: 500px) {
+    .post-page {
+        padding: 0 12px;
+    }
+}
+
 
 /* Post */
 
@@ -28,7 +34,7 @@
     word-break: break-word;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 500px) {
     .post {
         border-left: 1px solid hsl(0, 0%, 85%);
         border-right: 1px solid hsl(0, 0%, 85%);
@@ -100,7 +106,7 @@
     word-break: break-word;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 500px) {
     .comments {
         border-left: 1px solid hsl(0, 0%, 85%);
         border-right: 1px solid hsl(0, 0%, 85%);
