@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import RemarkGFM from 'remark-gfm';
+
 import { unescape } from '../../util/formatting';
+
 import './Markdown.css';
 
 function Markdown({ content }) {

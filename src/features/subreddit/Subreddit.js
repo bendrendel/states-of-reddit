@@ -13,14 +13,16 @@ import './Subreddit.css';
 
 function Subreddit() {
     const dispatch = useDispatch();
-    const { subreddit } = useParams();
-    const { search } = useLocation();
-    const queryParams = useMemo(() => { return new URLSearchParams(search) }, [search]);
-    const searchQuery = queryParams.get('q');
 
     const isLoading = useSelector(selectIsLoading);
     const hasError = useSelector(selectHasError);
     const posts = useSelector(selectPosts);
+
+    const { subreddit } = useParams();
+    const { search } = useLocation();
+
+    const queryParams = useMemo(() => { return new URLSearchParams(search) }, [search]);
+    const searchQuery = queryParams.get('q');
 
     useEffect(() => {
         const endpoint = searchQuery ? `https://www.reddit.com/r/${subreddit}/search.json?q=${searchQuery}&restrict_sr=1` : `https://www.reddit.com/r/${subreddit}.json`;

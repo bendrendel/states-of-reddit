@@ -3,12 +3,15 @@ import { useParams, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
-import './Search.css';
+
 import { setTerm, selectTerm } from './searchSlice';
+
+import './Search.css';
 
 function Search() {
     const dispatch = useDispatch();
     const searchTerm = useSelector(selectTerm);
+    
     const { subreddit } = useParams();
     const history = useHistory();
     

@@ -1,23 +1,26 @@
 import React, { useEffect } from 'react';
 import { useParams, useRouteMatch, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import './Post.css';
-import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
-import { timeSince, kmbt, percent, unescape } from '../../util/formatting';
+
 import Loading from '../../components/loading/Loading';
 import Markdown from '../../components/markdown/Markdown';
 import Error from '../../components/error/Error';
 
+import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
+import { timeSince, kmbt, percent, unescape } from '../../util/formatting';
+
+import './Post.css';
+
 function Post() {
     const dispatch = useDispatch();
-    const { subreddit } = useParams();
-    const { url } = useRouteMatch();
-    
     const isLoading = useSelector(selectIsLoading);
     const hasError = useSelector(selectHasError);
     const post = useSelector(selectPost);
     const comments = useSelector(selectComments);
 
+    const { subreddit } = useParams();
+    const { url } = useRouteMatch();
+    
     useEffect(() => {
         const endpoint = `https://www.reddit.com/${url.slice(1, url.length-1)}.json`;
         dispatch(fetchData(endpoint));

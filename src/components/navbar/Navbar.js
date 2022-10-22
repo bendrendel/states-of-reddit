@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './Navbar.css';
-import { states } from '../../util/states';
-import useOutsideClick from '../../util/useOutsideClick';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
+
+import { states } from '../../util/states';
+import useOutsideClick from '../../util/useOutsideClick';
+
+import './Navbar.css';
 
 function Navbar() {
     const handleHamburgerClick = (event) => {
