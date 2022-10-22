@@ -42,7 +42,7 @@ const subredditSlice = createSlice({
 
 export const selectIsLoading = store => store.subreddit.isLoading;
 export const selectHasError = store => store.subreddit.hasError;
-export const selectPosts = store => store.subreddit.data && store.subreddit.data.data.children.map(elem => elem.data);
+export const selectPosts = store => store.subreddit.data ? store.subreddit.data.data.children.map(elem => elem.data) : null;
 
 export default subredditSlice.reducer;
 export const { resetState } = subredditSlice.actions;
