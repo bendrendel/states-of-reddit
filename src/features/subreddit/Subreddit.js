@@ -1,13 +1,11 @@
 import React, { useEffect, useMemo } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
-import PostPreview from './post-preview/PostPreview';
 import SubredditHeader from './subreddit-header/SubredditHeader';
+import PostList from './post-list/PostList';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 
@@ -30,29 +28,22 @@ function Subreddit() {
         return () => dispatch(resetState());
     }, [subreddit, searchQuery]);
 
+    const apiContent = () => {
+        if (hasError) {
+            return <Error />;
+        } else if (isLoading) {
+            return <Loading />;
+        } else if (posts) {
+            return <PostList posts={posts} searchQuery={searchQuery} subreddit={subreddit} />;
+        } else {
+            return null;
+        }
+    }
+
     return (
         <main className='subreddit-page'>
             <SubredditHeader subreddit={subreddit} />
-
-            {isLoading && <Loading />}
-
-            {hasError && <Error />}
-
-            {posts && (
-                <section className='subreddit-posts'>
-                    {searchQuery && (<p className='search-message'>Showing search results for "{decodeURIComponent(searchQuery)}"<Link to={`/r/${subreddit}`} className='clear-search'><FontAwesomeIcon icon={faCircleXmark} /></Link></p>)}
-                    
-                    {posts.length === 0 && (<p className='no-posts'>No posts found</p>)}
-                    
-                    <ul>
-                        {posts.map(post => (
-                            <li key={post.id}>
-                                <PostPreview post={post} />                          
-                            </li>
-                        ))}                    
-                    </ul>
-                </section>
-            )}
+            {apiContent()}
         </main>
     )
 }

@@ -11,38 +11,3 @@
     background-color: hsl(0, 0%, 93%);
     line-height: normal;
 }
-
-/* Post Section */
-
-.subreddit-posts {
-    width: 100%;
-    max-width: 700px;
-    word-break: break-word;
-}
-
-@media only screen and (min-width: 500px) {
-    .subreddit-posts {
-        padding: 0 12px;
-    }
-}
-
-.search-message {
-    padding: 10px 10px 5px;
-    color: hsl(0, 0%, 35%);
-    font-style: italic;
-    text-align: left;
-}
-
-.clear-search {
-    color: hsl(0, 0%, 35%);
-    margin: 0 10px;
-}
-
-.clear-search:hover {
-    cursor: pointer;
-}
-
-.no-posts {
-    text-align: center;
-    padding: 40px;
-}

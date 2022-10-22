@@ -4,6 +4,6 @@
     margin: 20px;
 }
 
-.error p {
+.error > p {
     margin: 20px;
 }
