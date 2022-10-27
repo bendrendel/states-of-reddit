@@ -1,15 +1,6 @@
-/* Universal */
+/* Nav */
 
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Navbar */
-
-.main-menu {
+.nav-bar > nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,17 +12,20 @@ ul {
     box-shadow: 0 0 4px 0 hsla(0, 0%, 0%, 0.2)
 }
 
-.main-menu>ul {
+.nav-bar > nav > ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 
-/* Home Icon */
+/* Home Link */
 
-.home-icon {
+.home-link > svg {
     height: 21px;
     width: 21px;
     margin: 8px;
@@ -39,17 +33,24 @@ ul {
     border-radius: 50%;
 }
 
-.home-icon:hover {
+.home-link > svg:hover {
     color: hsl(213, 30%, 50%);
 }
 
-.home-icon:active {
+.home-link > svg:active {
     color: hsl(213, 20%, 40%);
 }
 
-/* Hamburger Icon */
 
-.hamburger-icon {
+/* Subreddit List Button */
+
+.subreddit-list-button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.subreddit-list-button > svg {
     height: 21px;
     width: 21px;
     padding: 8px;
@@ -57,15 +58,15 @@ ul {
     border-radius: 50%;
 }
 
-.hamburger-icon:hover {
+.subreddit-list-button > svg:hover {
     background-color: hsla(0, 0%, 0%, 0.1);
     cursor: pointer;
 }
 
-.hamburger-icon.open {
+.subreddit-list-button.open > svg {
     background-color: hsla(0, 0%, 0%, 0.2);
 }
 
-.hamburger-icon:active {
+.subreddit-list-button > svg:active {
     background-color: hsla(0, 0%, 0%, 0.15);
 }

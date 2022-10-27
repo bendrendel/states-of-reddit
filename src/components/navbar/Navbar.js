@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
 
-import useOutsideClick from '../../util/useOutsideClick';
+import SubredditList from './subreddit-list/SubredditList';
 
 import './Navbar.css';
-import SubredditList from './subreddit-list/SubredditList';
 
 function Navbar() {
     const [subredditListOpen, setSubredditListOpen] = useState(false);
@@ -16,19 +15,19 @@ function Navbar() {
         event.stopPropagation();
     };
 
-    const ref = useOutsideClick(() => setSubredditListOpen(false));
-
     return (
-        <header>
-            <nav className='main-menu'>
+        <header className='nav-bar'>
+            <nav>
                 <ul>
                     <li>
-                        <Link to='/'>
-                            <FontAwesomeIcon icon={faHouse} className='home-icon' />
+                        <Link to='/' className='home-link'>
+                            <FontAwesomeIcon icon={faHouse} />
                         </Link>
                     </li>
                     <li>
-                        <FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick} className={`hamburger-icon ${subredditListOpen && 'open'}`} />
+                        <button className={`subreddit-list-button${subredditListOpen ? ' open' : ''}`}>
+                            <FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick}  />                            
+                        </button>
                         <SubredditList open={subredditListOpen} setOpen={setSubredditListOpen} />   
                     </li>
                 </ul>                
