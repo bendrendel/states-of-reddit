@@ -21,7 +21,7 @@ function SubredditList({ open, setOpen }) {
                     <li key={state.name}>
                         <NavLink to={`/r/${state.subreddit}/`} onClick={handleNavLinkClick}>
                             <img src={require(`../../../util/state-flags/${state.abbreviation.toLowerCase()}.svg`)} alt={`${state.name} State Flag`} />
-                            <p>{state.name} subreddit</p>
+                            <p>{`${state.name} subreddit`}</p>
                         </NavLink>
                     </li>
                 ))

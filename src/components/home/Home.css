@@ -1,4 +1,4 @@
-.home-page {
+.home {
     position: absolute;
     top: 50px;
     bottom: 0;
@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
 }
 
-.home-page>header {
+.home > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -21,7 +21,7 @@
     background: linear-gradient(hsla(0, 0%, 0%, 0.5) 75%, hsla(0, 0%, 100%, 0) 100%);
 }
 
-.home-page h1 {
+.home h1 {
     font-size: calc(40px + 0.8vw);
     font-family: 'Goudy Bookletter 1911', serif;
     font-weight: 800;
@@ -31,13 +31,13 @@
     letter-spacing: 2px;
 }
 
-.home-page p {
+.home p {
     color: white;
     text-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.5);
     font-size: calc(17px + 0.3vw);
 }
 
-.home-page em {
+.home em {
     font-style: italic;
     text-shadow: -2px 0px 4px hsla(344, 75.5%, 40%);
 }
