@@ -1,4 +1,4 @@
-.short-post-preview {
+.partial-post-preview {
     display: flex;
     flex-direction: column;
     border-top: 1px solid hsl(0, 0%, 85%);
@@ -11,28 +11,28 @@
 }
 
 @media only screen and (min-width: 500px) {
-    .short-post-preview {
+    .partial-post-preview {
         border-left: 1px solid hsl(0, 0%, 80%);
         border-right: 1px solid hsl(0, 0%, 80%);
     }
 }
 
-.short-post-preview:hover {
+.partial-post-preview:hover {
     border-color: hsl(0, 0%, 55%);
 }
 
-.short-post-preview header {
+.partial-post-preview header {
     color: hsl(0, 0%, 60%);
     font-size: 14px;
 }
 
-.short-post-preview h2 {
+.partial-post-preview h2 {
     color: hsl(0, 0%, 0%);
     margin: 10px 0;
     font-size: 18px;
 }
 
-.short-post-preview footer {
+.partial-post-preview footer {
     display: flex;
     justify-content: space-between;
     color: hsl(0, 0%, 60%);

@@ -35,7 +35,7 @@ function Post() {
             return <Loading />;
         } else if (post || comments) {
             return (
-                <div>
+                <div className='post-api-data'>
                     {post ? <FullPostPreview post={post} subreddit={subreddit} /> : null}
                     {comments ? <CommentList comments={comments} /> : null}
                 </div>
