@@ -11,3 +11,14 @@
     background-color: hsl(0, 0%, 93%);
     line-height: normal;
 }
+
+.subreddit-api-data {
+    width: 100%;
+    max-width: 700px;
+}
+
+@media only screen and (min-width: 500px) {
+    .subreddit-api-data {
+        padding: 0 12px;
+    }
+}

@@ -1,0 +1,15 @@
+.search-indicator {
+    padding: 10px 12px 5px;
+    color: hsl(0, 0%, 35%);
+    font-style: italic;
+    text-align: left;
+}
+
+.search-indicator a {
+    color: hsl(0, 0%, 35%);
+    margin: 0 10px;
+}
+
+.search-indicator a:hover {
+    cursor: pointer;
+}

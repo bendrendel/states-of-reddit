@@ -2,10 +2,12 @@ import React, { useEffect, useMemo } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import SubredditBanner from './subreddit-banner/SubredditBanner';
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
-import SubredditBanner from './subreddit-banner/SubredditBanner';
 import PostList from './post-list/PostList';
+import SearchIndicator from './search-indicator/SearchIndicator';
+import NoPostsIndicator from './no-posts-indicator/NoPostsIndicator';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 
@@ -30,13 +32,22 @@ function Subreddit() {
         return () => dispatch(resetState());
     }, [subreddit, searchQuery]);
 
-    const apiContent = () => {
+    const apiResponse = () => {
         if (hasError) {
             return <Error />;
         } else if (isLoading) {
             return <Loading />;
         } else if (posts) {
-            return <PostList posts={posts} searchQuery={searchQuery} subreddit={subreddit} />;
+            return (
+                <div className="subreddit-api-data">
+                    <SearchIndicator searchQuery={searchQuery} subreddit={subreddit} />
+                    {
+                        posts.length === 0
+                            ? <NoPostsIndicator />
+                            : <PostList posts={posts}/>  
+                    }
+                </div>
+            );
         } else {
             return null;
         }
@@ -45,7 +56,7 @@ function Subreddit() {
     return (
         <main className='subreddit'>
             <SubredditBanner subreddit={subreddit} />
-            {apiContent()}
+            {apiResponse()}
         </main>
     )
 }
