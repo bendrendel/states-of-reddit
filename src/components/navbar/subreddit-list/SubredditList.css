@@ -50,13 +50,13 @@
     background-color: hsla(0, 0%, 0%, 0.15);
 }
 
-.subreddit-list a > img {
+.subreddit-list img {
     height: 25px;
     justify-self: center;
     box-shadow: 0 0 4px 0px hsla(0, 0%, 0%, 0.2);
 }
 
-.subreddit-list a > p {
+.subreddit-list p {
     padding: 0 10px;
     font-family: 'Average Sans', sans-serif;
     color: hsl(0, 0%, 20%);

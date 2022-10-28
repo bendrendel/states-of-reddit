@@ -5,21 +5,21 @@ import Search from '../../search/Search';
 
 import { states } from '../../../util/states';
 
-import './SubredditHeader.css';
+import './SubredditBanner.css';
 
-function SubredditHeader({ subreddit }) {
+function SubredditBanner({ subreddit }) {
     const stateAbbreviation = states.find(state => state.subreddit === subreddit).abbreviation;
     const stateFlag = require(`../../../util/state-flags/${stateAbbreviation.toLowerCase()}.svg`);
 
     return (
-        <header style={{ backgroundImage: `url(${stateFlag})` }} className='subreddit-header'>
+        <div style={{ backgroundImage: `url(${stateFlag})` }} className='subreddit-banner'>
             <Link to={`/r/${subreddit}`}>
                 <h1>{`r/${subreddit}`}</h1>
             </Link>
 
             <Search />
-        </header>
+        </div>
     )
 }
 
-export default SubredditHeader;
+export default SubredditBanner;

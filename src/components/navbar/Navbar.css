@@ -1,6 +1,6 @@
 /* Nav */
 
-.nav-bar > nav {
+.nav-bar nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@
 
 /* Home Link */
 
-.home-link > svg {
+.home-link svg {
     height: 21px;
     width: 21px;
     margin: 8px;
@@ -33,11 +33,11 @@
     border-radius: 50%;
 }
 
-.home-link > svg:hover {
+.home-link svg:hover {
     color: hsl(213, 30%, 50%);
 }
 
-.home-link > svg:active {
+.home-link svg:active {
     color: hsl(213, 20%, 40%);
 }
 
@@ -50,7 +50,7 @@
     padding: 0;
 }
 
-.subreddit-list-button > svg {
+.subreddit-list-button svg {
     height: 21px;
     width: 21px;
     padding: 8px;
@@ -58,15 +58,15 @@
     border-radius: 50%;
 }
 
-.subreddit-list-button > svg:hover {
+.subreddit-list-button svg:hover {
     background-color: hsla(0, 0%, 0%, 0.1);
     cursor: pointer;
 }
 
-.subreddit-list-button.open > svg {
+.subreddit-list-button.open svg {
     background-color: hsla(0, 0%, 0%, 0.2);
 }
 
-.subreddit-list-button > svg:active {
+.subreddit-list-button svg:active {
     background-color: hsla(0, 0%, 0%, 0.15);
 }

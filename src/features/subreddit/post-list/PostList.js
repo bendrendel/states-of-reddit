@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
-import PostPreview from './post-preview/PostPreview';
+import ShortPostPreview from './short-post-preview/ShortPostPreview';
 
 import './PostList.css';
 
 function PostList({ posts, searchQuery, subreddit }) {
     return (
-        <section className='post-list'>
+        <div className='post-list'>
             {
                 searchQuery
                     ? (
                         <div className='search-message'>
-                            <span>Showing search results for "{decodeURIComponent(searchQuery)}"</span>
-                            <Link to={`/r/${subreddit}`} className='clear-search'>
+                            <span>{`Showing search results for "${decodeURIComponent(searchQuery)}"`}</span>
+                            <Link to={`/r/${subreddit}`}>
                                 <FontAwesomeIcon icon={faCircleXmark} />
                             </Link>
                         </div>
@@ -25,20 +25,20 @@ function PostList({ posts, searchQuery, subreddit }) {
                         
             {
                 posts.length === 0
-                    ? <div className='no-posts'>Sorry, no posts found</div>
+                    ? <div className='no-posts-message'>Sorry, no posts found</div>
                     : (
                         <ul>
                             {
                                 posts.map(post => (
                                     <li key={post.id}>
-                                        <PostPreview post={post} />
+                                        <ShortPostPreview post={post} />
                                     </li>
                                 ))
                             }
                         </ul>
                     )
             }
-        </section>
+        </div>
     )
 }
 

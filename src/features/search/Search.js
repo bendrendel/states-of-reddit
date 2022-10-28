@@ -33,10 +33,16 @@ function Search() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='search-bar'>
-            <FontAwesomeIcon icon={faMagnifyingGlass} className='search-button' onClick={handleSearchClick} />
+        <form onSubmit={handleSubmit} className='search'>
+            <button>
+                <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSearchClick} />    
+            </button>
+            
             <input type="text" value={searchTerm} placeholder={`Search r/${subreddit}`} onChange={handleChange} />
-            <FontAwesomeIcon icon={faXmark} className='clear-button' onClick={handleClearClick} />
+
+            <button>
+                <FontAwesomeIcon icon={faXmark} onClick={handleClearClick} />    
+            </button>
         </form>
     );
 }

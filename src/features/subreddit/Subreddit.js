@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
-import SubredditHeader from './subreddit-header/SubredditHeader';
+import SubredditBanner from './subreddit-banner/SubredditBanner';
 import PostList from './post-list/PostList';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
@@ -43,8 +43,8 @@ function Subreddit() {
     }
 
     return (
-        <main className='subreddit-page'>
-            <SubredditHeader subreddit={subreddit} />
+        <main className='subreddit'>
+            <SubredditBanner subreddit={subreddit} />
             {apiContent()}
         </main>
     )

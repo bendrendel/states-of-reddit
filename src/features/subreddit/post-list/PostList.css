@@ -17,16 +17,16 @@
     text-align: left;
 }
 
-.clear-search {
+.search-message a {
     color: hsl(0, 0%, 35%);
     margin: 0 10px;
 }
 
-.clear-search:hover {
+.search-message a:hover {
     cursor: pointer;
 }
 
-.no-posts {
+.no-posts-message {
     text-align: center;
     margin-top: 100px;
 }
