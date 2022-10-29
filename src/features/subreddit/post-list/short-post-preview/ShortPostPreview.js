@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 import { timeSince, kmbt, unescape } from '../../../../util/formatting';
 
-import './PartialPostPreview.css';
+import './ShortPostPreview.css';
 
-function PartialPostPreview({ post }) {
+function ShortPostPreview({ post }) {
     return (
-        <Link to={post.permalink} className='partial-post-preview'>
+        <Link to={post.permalink} className='short-post-preview'>
             <header>
                 <p>{`posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
             </header>
@@ -22,4 +22,4 @@ function PartialPostPreview({ post }) {
     )
 }
 
-export default PartialPostPreview;
+export default ShortPostPreview;

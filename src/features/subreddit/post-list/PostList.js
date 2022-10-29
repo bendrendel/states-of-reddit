@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PartialPostPreview from './partial-post-preview/PartialPostPreview';
+import ShortPostPreview from './short-post-preview/ShortPostPreview';
 
 import './PostList.css';
 
@@ -10,7 +10,7 @@ function PostList({ posts }) {
             {
                 posts.map(post => (
                     <li key={post.id}>
-                        <PartialPostPreview post={post} />
+                        <ShortPostPreview post={post} />
                     </li>
                 ))
             }
