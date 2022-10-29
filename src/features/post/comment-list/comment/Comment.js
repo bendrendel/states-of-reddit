@@ -1,18 +1,23 @@
 import React from 'react';
 
+import { timeSince, kmbt } from '../../../../util/formatting';
+
+import Markdown from '../../../../components/markdown/Markdown';
+
 import './Comment.css';
 
-function Comment() {
+function Comment({ comment }) {
     return (
-        <div>
+        <div className='comment'>
             <header>
-                <strong>{comment.author}</strong>
-                • {timeSince(comment.created_utc)}
+                <strong>{comment.author}</strong> • {timeSince(comment.created_utc)}
             </header>
-            <div className="comment-body">
-                <Markdown content={comment.body} />
-            </div>
-            <footer>{kmbt(comment.ups)} {comment.ups === 1 ? 'upvote' : 'upvotes'}</footer>
+
+            <Markdown content={comment.body} />
+        
+            <footer>
+                {kmbt(comment.ups)} {comment.ups === 1 ? 'upvote' : 'upvotes'}
+            </footer>
         </div>
     )
 }

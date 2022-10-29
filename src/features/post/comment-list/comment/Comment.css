@@ -1,0 +1,32 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    font-family: 'Average Sans', sans-serif;
+    text-decoration: none;
+}
+
+.comment header {
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+
+.comment strong {
+    font-weight: 900;
+    color: hsl(0, 0%, 30%);
+}
+
+.comment footer {
+    display: flex;
+    justify-content: space-between;
+    color: hsl(0, 0%, 60%);
+    font-size: 14px;
+    padding: 15px 0 0 10px;
+}
+
+.markdown {
+    color: hsl(0, 0%, 0%);
+    padding-left: 10px;
+    font-size: 16px;
+}

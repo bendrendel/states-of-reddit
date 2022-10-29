@@ -6,6 +6,7 @@ import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
 import FullPostPreview from './full-post-preview/FullPostPreview';
 import CommentList from './comment-list/CommentList';
+import NoCommentsIndicator from './no-comments-indicator/NoCommentsIndicator';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
 
@@ -36,8 +37,21 @@ function Post() {
         } else if (post || comments) {
             return (
                 <div className='post-api-data'>
-                    {post ? <FullPostPreview post={post} subreddit={subreddit} /> : null}
-                    {comments ? <CommentList comments={comments} /> : null}
+                    {
+                        post
+                            ? <FullPostPreview post={post} subreddit={subreddit} />
+                            : null
+                    }
+                    {
+                        comments && comments.length === 0
+                            ? <NoCommentsIndicator />
+                            : null
+                    }
+                    {
+                        comments && comments.length > 0
+                            ? <CommentList comments={comments} />
+                            : null
+                    }
                 </div>
             );
         } else {

@@ -12,7 +12,12 @@ function Markdown({ content }) {
         .replace(/\|/g, match => `${match} `);
 
     return (
-        <ReactMarkdown className='markdown' remarkPlugins={[RemarkGFM]} linkTarget={'_blank'} children={formattedContent} />
+        <ReactMarkdown
+            className='markdown'
+            remarkPlugins={[RemarkGFM]}
+            linkTarget={'_blank'}
+            children={formattedContent}
+        />
     );
 }
 
