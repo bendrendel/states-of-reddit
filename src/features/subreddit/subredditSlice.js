@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchData = createAsyncThunk(
     'subreddit/fetchData',
-    async (endpoint, thunkAPI) => {
+    async (endpoint) => {
         const response = await fetch(endpoint);
         const json = await response.json();
         return json;
@@ -17,14 +17,14 @@ const subredditSlice = createSlice({
         hasError: false
     },
     reducers: {
-        resetState(state, action) {
+        resetState(state) {
             state.data = null;
             state.isLoading = false;
             state.hasError = false;
         }
     },
     extraReducers: {
-        [fetchData.pending]: (state, action) => {
+        [fetchData.pending]: (state) => {
             state.isLoading = true;
             state.hasError = false;
         },
@@ -33,7 +33,7 @@ const subredditSlice = createSlice({
             state.isLoading = false;
             state.hasError = false;
         },
-        [fetchData.rejected]: (state, action) => {
+        [fetchData.rejected]: (state) => {
             state.isLoading = false;
             state.hasError = true;
         }
@@ -42,7 +42,13 @@ const subredditSlice = createSlice({
 
 export const selectIsLoading = store => store.subreddit.isLoading;
 export const selectHasError = store => store.subreddit.hasError;
-export const selectPosts = store => store.subreddit.data ? store.subreddit.data.data.children.map(elem => elem.data) : null;
+
+export const selectPosts = store => (
+    store.subreddit.data
+        ? store.subreddit.data.data.children
+            .map(elem => elem.data)
+        : null
+);
 
 export default subredditSlice.reducer;
 export const { resetState } = subredditSlice.actions;

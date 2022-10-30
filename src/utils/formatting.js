@@ -54,14 +54,10 @@ export const percent = (decimal) => {
 }
 
 export const unescape = (string) => {
-    const greaterThan = '&gt;';
-    const lessThan = '&lt;';
-    const ampersand = '&amp;';
-
     const escapedString = string
-        .replaceAll(greaterThan, '>')
-        .replaceAll(lessThan, '<')
-        .replaceAll(ampersand, '&');
+        .replaceAll('&gt;', '>')
+        .replaceAll('&lt;', '<')
+        .replaceAll('&amp;', '&');
     
     return escapedString;
 }

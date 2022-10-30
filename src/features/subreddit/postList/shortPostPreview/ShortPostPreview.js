@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { timeSince, kmbt, unescape } from '../../../../util/formatting';
+import { timeSince, kmbt, unescape } from '../../../../utils/formatting';
 
 import './ShortPostPreview.css';
 
@@ -18,7 +18,7 @@ function ShortPostPreview({ post }) {
                 <p>{kmbt(post.ups)} {Math.abs(post.ups) === 1 ? 'upvote' : 'upvotes'}</p>
                 <p>{kmbt(post.num_comments)} {post.num_comments === 1 ? 'comment' : 'comments'}</p>
             </footer>
-        </Link>     
+        </Link>
     )
 }
 

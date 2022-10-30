@@ -1,6 +1,6 @@
 /* Nav */
 
-.nav-bar nav {
+.navbar nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     box-shadow: 0 0 4px 0 hsla(0, 0%, 0%, 0.2)
 }
 
-.nav-bar > nav > ul {
+.navbar > nav > ul {
     display: flex;
     justify-content: space-between;
     align-items: center;

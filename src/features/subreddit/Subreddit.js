@@ -2,12 +2,12 @@ import React, { useEffect, useMemo } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import SubredditBanner from './subreddit-banner/SubredditBanner';
+import SubredditBanner from './subredditBanner/SubredditBanner';
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
-import PostList from './post-list/PostList';
-import SearchIndicator from './search-indicator/SearchIndicator';
-import NoPostsIndicator from './no-posts-indicator/NoPostsIndicator';
+import PostList from './postList/PostList';
+import SearchIndicator from './searchIndicator/SearchIndicator';
+import NoPostsIndicator from './noPostsIndicator/NoPostsIndicator';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPosts } from './subredditSlice';
 
@@ -20,17 +20,20 @@ function Subreddit() {
     const hasError = useSelector(selectHasError);
     const posts = useSelector(selectPosts);
 
-    const { subreddit } = useParams();
+    const { subredditName } = useParams();
     const { search } = useLocation();
-
     const queryParams = useMemo(() => { return new URLSearchParams(search) }, [search]);
     const searchQuery = queryParams.get('q');
 
     useEffect(() => {
-        const endpoint = searchQuery ? `https://www.reddit.com/r/${subreddit}/search.json?q=${searchQuery}&restrict_sr=1` : `https://www.reddit.com/r/${subreddit}.json`;
+        const endpoint = searchQuery
+            ? `https://www.reddit.com/r/${subredditName}/search.json?q=${searchQuery}&restrict_sr=1`
+            : `https://www.reddit.com/r/${subredditName}.json`;
+        
         dispatch(fetchData(endpoint));
+
         return () => dispatch(resetState());
-    }, [subreddit, searchQuery]);
+    }, [subredditName, searchQuery]);
 
     const apiContent = () => {
         if (hasError) {
@@ -40,7 +43,11 @@ function Subreddit() {
         } else if (posts) {
             return (
                 <div className="subreddit-api-data">
-                    <SearchIndicator searchQuery={searchQuery} subreddit={subreddit} />
+                    {
+                        searchQuery
+                            ? <SearchIndicator searchQuery={searchQuery} subredditName={subredditName} />
+                            : null
+                    }
                     {
                         posts.length === 0
                             ? <NoPostsIndicator />
@@ -55,7 +62,7 @@ function Subreddit() {
 
     return (
         <main className='subreddit'>
-            <SubredditBanner subreddit={subreddit} />
+            <SubredditBanner subredditName={subredditName} />
             {apiContent()}
         </main>
     )

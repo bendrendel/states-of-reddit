@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ShortPostPreview from './short-post-preview/ShortPostPreview';
+import ShortPostPreview from './shortPostPreview/ShortPostPreview';
 
 import './PostList.css';
 

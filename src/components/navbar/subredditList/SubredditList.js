@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { states } from '../../../util/states';
+import { usStates } from '../../../util/usStates';
 import useOutsideClick from '../../../util/useOutsideClick';
 
 import './SubredditList.css';
@@ -17,14 +17,14 @@ function SubredditList({ open, setOpen }) {
     return (
         <ul ref={ref} className={`subreddit-list${open ? ' open' : ''}`}>
             {
-                states.map(state => (
-                    <li key={state.name}>
-                        <NavLink to={`/r/${state.subreddit}/`} onClick={handleNavLinkClick}>
+                usStates.map(usState => (
+                    <li key={usState.name}>
+                        <NavLink to={`/r/${usState.subredditName}/`} onClick={handleNavLinkClick}>
                             <img
-                                src={require(`../../../util/state-flags/${state.abbreviation.toLowerCase()}.svg`)}
-                                alt={`${state.name} State Flag`}
+                                src={require(`../../../images/usStateFlags/${usState.abbreviation.toLowerCase()}.svg`)}
+                                alt={`${usState.name} state flag`}
                             />
-                            <p>{state.name} subreddit</p>
+                            <p>{usState.name} subreddit</p>
                         </NavLink>
                     </li>
                 ))

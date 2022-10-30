@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import RemarkGFM from 'remark-gfm';
 
-import { unescape } from '../../util/formatting';
+import { unescape } from '../../utils/formatting';
 
 import './Markdown.css';
 

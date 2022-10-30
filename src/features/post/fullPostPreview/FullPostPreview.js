@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MediaContent from './media-content/MediaContent';
+import MediaContent from './mediaContent/MediaContent';
 import Markdown from '../../../components/markdown/Markdown';
 
 import { timeSince, kmbt, percent, unescape } from '../../../util/formatting';
 
 import './FullPostPreview.css';
 
-function FullPostPreview({ post, subreddit }) {
+function FullPostPreview({ post, subredditName }) {
     return (
         <article className='full-post-preview'>
             <header>
                 <p>
-                    <Link to={`/r/${subreddit}`}>r/{subreddit}</Link>
+                    <Link to={`/r/${subredditName}`}>r/{subredditName}</Link>
                     • posted by u/{post.author} {timeSince(post.created_utc)}
                 </p>
             </header>

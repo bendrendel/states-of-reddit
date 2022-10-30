@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faBars } from '@fortawesome/free-solid-svg-icons';
 
-import SubredditList from './subreddit-list/SubredditList';
+import SubredditList from './subredditList/SubredditList';
 
 import './Navbar.css';
 
@@ -16,7 +16,7 @@ function Navbar() {
     };
 
     return (
-        <header className='nav-bar'>
+        <header className='navbar'>
             <nav>
                 <ul>
                     <li>
@@ -26,8 +26,9 @@ function Navbar() {
                     </li>
                     <li>
                         <button className={`subreddit-list-button${subredditListOpen ? ' open' : ''}`}>
-                            <FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick}  />                            
+                            <FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick} />
                         </button>
+
                         <SubredditList open={subredditListOpen} setOpen={setSubredditListOpen} />   
                     </li>
                 </ul>                

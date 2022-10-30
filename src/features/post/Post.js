@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Loading from '../../components/loading/Loading';
 import Error from '../../components/error/Error';
-import FullPostPreview from './full-post-preview/FullPostPreview';
-import CommentList from './comment-list/CommentList';
-import NoCommentsIndicator from './no-comments-indicator/NoCommentsIndicator';
+import FullPostPreview from './fullPostPreview/FullPostPreview';
+import CommentList from './commentList/CommentList';
+import NoCommentsIndicator from './noCommentsIndicator/NoCommentsIndicator';
 
 import { fetchData, resetState, selectIsLoading, selectHasError, selectPost, selectComments } from './postSlice';
 
@@ -20,7 +20,7 @@ function Post() {
     const post = useSelector(selectPost);
     const comments = useSelector(selectComments);
 
-    const { subreddit } = useParams();
+    const { subredditName } = useParams();
     const { url } = useRouteMatch();
 
     useEffect(() => {
@@ -39,7 +39,7 @@ function Post() {
                 <div className='post-api-data'>
                     {
                         post
-                            ? <FullPostPreview post={post} subreddit={subreddit} />
+                            ? <FullPostPreview post={post} subredditName={subredditName} />
                             : null
                     }
                     {

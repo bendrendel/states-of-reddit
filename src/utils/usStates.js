@@ -1,252 +1,252 @@
-export const states = [
+export const usStates = [
     {
         name: 'Alabama',
         abbreviation: 'AL',
-        subreddit: 'Alabama'
+        subredditName: 'Alabama'
     },
     {
         name: 'Alaska',
         abbreviation: 'AK',
-        subreddit: 'alaska'
+        subredditName: 'alaska'
     },
     {
         name: 'Arizona',
         abbreviation: 'AZ',
-        subreddit: 'arizona'
+        subredditName: 'arizona'
     },
     {
         name: 'Arkansas',
         abbreviation: 'AR',
-        subreddit: 'Arkansas'
+        subredditName: 'Arkansas'
     },
     {
         name: 'California',
         abbreviation: 'CA',
-        subreddit: 'California'
+        subredditName: 'California'
     },
     {
         name: 'Colorado',
         abbreviation: 'CO',
-        subreddit: 'Colorado'
+        subredditName: 'Colorado'
     },
     {
         name: 'Connecticut',
         abbreviation: 'CT',
-        subreddit: 'Connecticut'
+        subredditName: 'Connecticut'
     },
     {
         name: 'Delaware',
         abbreviation: 'DE',
-        subreddit: 'Delaware'
+        subredditName: 'Delaware'
     },
     {
         name: 'Florida',
         abbreviation: 'FL',
-        subreddit: 'florida'
+        subredditName: 'florida'
     },
     {
         name: 'Georgia',
         abbreviation: 'GA',
-        subreddit: 'Georgia'
+        subredditName: 'Georgia'
     },
     {
         name: 'Hawaii',
         abbreviation: 'HI',
-        subreddit: 'Hawaii'
+        subredditName: 'Hawaii'
     },
     {
         name: 'Idaho',
         abbreviation: 'ID',
-        subreddit: 'Idaho'
+        subredditName: 'Idaho'
     },
     {
         name: 'Illinois',
         abbreviation: 'IL',
-        subreddit: 'illinois'
+        subredditName: 'illinois'
     },
     {
         name: 'Indiana',
         abbreviation: 'IN',
-        subreddit: 'Indiana'
+        subredditName: 'Indiana'
     },
     {
         name: 'Iowa',
         abbreviation: 'IA',
-        subreddit: 'Iowa'
+        subredditName: 'Iowa'
     },
     {
         name: 'Kansas',
         abbreviation: 'KS',
-        subreddit: 'kansas'
+        subredditName: 'kansas'
     },
     {
         name: 'Kentucky',
         abbreviation: 'KY',
-        subreddit: 'Kentucky'
+        subredditName: 'Kentucky'
     },
     {
         name: 'Louisiana',
         abbreviation: 'LA',
-        subreddit: 'Louisiana'
+        subredditName: 'Louisiana'
     },
     {
         name: 'Maine',
         abbreviation: 'ME',
-        subreddit: 'Maine'
+        subredditName: 'Maine'
     },
     {
         name: 'Maryland',
         abbreviation: 'MD',
-        subreddit: 'maryland'
+        subredditName: 'maryland'
     },
     {
         name: 'Massachusetts',
         abbreviation: 'MA',
-        subreddit: 'massachusetts'
+        subredditName: 'massachusetts'
     },
     {
         name: 'Michigan',
         abbreviation: 'MI',
-        subreddit: 'Michigan'
+        subredditName: 'Michigan'
     },
     {
         name: 'Minnesota',
         abbreviation: 'MN',
-        subreddit: 'minnesota'
+        subredditName: 'minnesota'
     },
     {
         name: 'Mississippi',
         abbreviation: 'MS',
-        subreddit: 'mississippi'
+        subredditName: 'mississippi'
     },
     {
         name: 'Missouri',
         abbreviation: 'MO',
-        subreddit: 'missouri'
+        subredditName: 'missouri'
     },
     {
         name: 'Montana',
         abbreviation: 'MT',
-        subreddit: 'Montana'
+        subredditName: 'Montana'
     },
     {
         name: 'Nebraska',
         abbreviation: 'NE',
-        subreddit: 'Nebraska'
+        subredditName: 'Nebraska'
     },
     {
         name: 'Nevada',
         abbreviation: 'NV',
-        subreddit: 'Nevada'
+        subredditName: 'Nevada'
     },
     {
         name: 'New Hampshire',
         abbreviation: 'NH',
-        subreddit: 'newhampshire'
+        subredditName: 'newhampshire'
     },
     {
         name: 'New Jersey',
         abbreviation: 'NJ',
-        subreddit: 'newjersey'
+        subredditName: 'newjersey'
     },
     {
         name: 'New Mexico',
         abbreviation: 'NM',
-        subreddit: 'NewMexico'
+        subredditName: 'NewMexico'
     },
     {
         name: 'New York',
         abbreviation: 'NY',
-        subreddit: 'newyork'
+        subredditName: 'newyork'
     },
     {
         name: 'North Carolina',
         abbreviation: 'NC',
-        subreddit: 'NorthCarolina'
+        subredditName: 'NorthCarolina'
     },
     {
         name: 'North Dakota',
         abbreviation: 'ND',
-        subreddit: 'northdakota'
+        subredditName: 'northdakota'
     },
     {
         name: 'Ohio',
         abbreviation: 'OH',
-        subreddit: 'Ohio'
+        subredditName: 'Ohio'
     },
     {
         name: 'Oklahoma',
         abbreviation: 'OK',
-        subreddit: 'oklahoma'
+        subredditName: 'oklahoma'
     },
     {
         name: 'Oregon',
         abbreviation: 'OR',
-        subreddit: 'oregon'
+        subredditName: 'oregon'
     },
     {
         name: 'Pennsylvania',
         abbreviation: 'PA',
-        subreddit: 'Pennsylvania'
+        subredditName: 'Pennsylvania'
     },
     {
         name: 'Rhode Island',
         abbreviation: 'RI',
-        subreddit: 'RhodeIsland'
+        subredditName: 'RhodeIsland'
     },
     {
         name: 'South Carolina',
         abbreviation: 'SC',
-        subreddit: 'southcarolina'
+        subredditName: 'southcarolina'
     },
     {
         name: 'South Dakota',
         abbreviation: 'SD',
-        subreddit: 'SouthDakota'
+        subredditName: 'SouthDakota'
     },
     {
         name: 'Tennessee',
         abbreviation: 'TN',
-        subreddit: 'Tennessee'
+        subredditName: 'Tennessee'
     },
     {
         name: 'Texas',
         abbreviation: 'TX',
-        subreddit: 'texas'
+        subredditName: 'texas'
     },
     {
         name: 'Utah',
         abbreviation: 'UT',
-        subreddit: 'Utah'
+        subredditName: 'Utah'
     },
     {
         name: 'Vermont',
         abbreviation: 'VT',
-        subreddit: 'vermont'
+        subredditName: 'vermont'
     },
     {
         name: 'Virginia',
         abbreviation: 'VA',
-        subreddit: 'Virginia'
+        subredditName: 'Virginia'
     },
     {
         name: 'Washington',
         abbreviation: 'WA',
-        subreddit: 'Washington'
+        subredditName: 'Washington'
     },
     {
         name: 'West Virginia',
         abbreviation: 'WV',
-        subreddit: 'WestVirginia'
+        subredditName: 'WestVirginia'
     },
     {
         name: 'Wisconsin',
         abbreviation: 'WI',
-        subreddit: 'wisconsin'
+        subredditName: 'wisconsin'
     },
     {
         name: 'Wyoming',
         abbreviation: 'WY',
-        subreddit: 'wyoming'
+        subredditName: 'wyoming'
     }
 ]
