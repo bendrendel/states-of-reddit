@@ -10,10 +10,12 @@ function SearchIndicator({ searchQuery, subreddit }) {
         searchQuery
             ? (
                 <div className='search-indicator' >
-                    <span>{`Showing search results for "${decodeURIComponent(searchQuery)}"`}</span>
-                    <Link to={`/r/${subreddit}`}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </Link>
+                    <p>
+                        Showing search results for "{decodeURIComponent(searchQuery)}"
+                        <Link to={`/r/${subreddit}`}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </Link>
+                    </p>                    
                 </div>
             )
             : null

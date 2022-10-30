@@ -13,10 +13,10 @@ function SubredditBanner({ subreddit }) {
 
     return (
         <div style={{ backgroundImage: `url(${stateFlag})` }} className='subreddit-banner'>
-            <Link to={`/r/${subreddit}`}>
-                <h1>{`r/${subreddit}`}</h1>
-            </Link>
-
+            <h1>
+                <Link to={`/r/${subreddit}`}>r/{subreddit}</Link>
+            </h1>
+            
             <Search />
         </div>
     )

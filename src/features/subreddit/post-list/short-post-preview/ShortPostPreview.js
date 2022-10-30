@@ -9,7 +9,7 @@ function ShortPostPreview({ post }) {
     return (
         <Link to={post.permalink} className='short-post-preview'>
             <header>
-                <p>{`posted by u/${post.author} ${timeSince(post.created_utc)}`}</p>
+                <p>posted by u/{post.author} {timeSince(post.created_utc)}</p>
             </header>
 
             <h2>{unescape(post.title)}</h2>

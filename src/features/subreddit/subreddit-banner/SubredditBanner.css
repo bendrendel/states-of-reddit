@@ -13,10 +13,8 @@
 }
 
 .subreddit-banner a {
+    display: block;
     text-decoration: none;
-}
-
-.subreddit-banner h1 {
     font-family: 'Goudy Bookman 1911', serif;
     font-size: 32px;
     color: hsl(0, 0%, 20%);
