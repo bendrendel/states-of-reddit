@@ -1,0 +1,19 @@
+.image-media,
+.video-media {
+    align-self: center;
+    margin: 10px 0;
+}
+
+.image-media img,
+.video-media video {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 800px;
+}
+
+.other-media a {
+    display: block;
+    width: fit-content;
+    margin: 10px 0;
+}

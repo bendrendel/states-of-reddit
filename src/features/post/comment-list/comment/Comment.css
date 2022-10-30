@@ -6,18 +6,18 @@
     text-decoration: none;
 }
 
-.comment header {
+.comment > header {
     color: hsl(0, 0%, 60%);
     font-size: 14px;
     padding-bottom: 15px;
 }
 
-.comment strong {
+.comment > strong {
     font-weight: 900;
     color: hsl(0, 0%, 30%);
 }
 
-.comment footer {
+.comment > footer {
     display: flex;
     justify-content: space-between;
     color: hsl(0, 0%, 60%);

@@ -32,7 +32,7 @@ function Subreddit() {
         return () => dispatch(resetState());
     }, [subreddit, searchQuery]);
 
-    const apiResponse = () => {
+    const apiContent = () => {
         if (hasError) {
             return <Error />;
         } else if (isLoading) {
@@ -56,7 +56,7 @@ function Subreddit() {
     return (
         <main className='subreddit'>
             <SubredditBanner subreddit={subreddit} />
-            {apiResponse()}
+            {apiContent()}
         </main>
     )
 }

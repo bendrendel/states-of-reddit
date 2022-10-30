@@ -29,7 +29,7 @@ function Post() {
         return () => dispatch(resetState());
     }, [url]);
 
-    const apiResponse = () => {
+    const apiContent = () => {
         if (hasError) {
             return <Error />;
         } else if (isLoading) {
@@ -61,7 +61,7 @@ function Post() {
 
     return (
         <main className='post'>
-            {apiResponse()}
+            {apiContent()}
         </main>
     );
 }

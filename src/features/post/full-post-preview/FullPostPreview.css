@@ -24,43 +24,24 @@
     color: hsl(0, 0%, 60%)
 }
 
-.subreddit-link {
+.full-post-preview > header a {
     font-weight: bold;
     color: hsl(0, 0%, 15%);
     text-decoration: none;
+    padding-right: 4px;
 }
 
-.subreddit-link:hover {
+.full-post-preview > header a:hover {
     text-decoration: underline;
 }
 
-.post-title {
+.full-post-preview > h1 {
     font-family: 'Goudy Bookman 1911', serif;
     font-size: 28px;
     margin: 10px 0 15px;
 }
 
-.image-url,
-.video-url {
-    align-self: center;
-    margin: 10px 0;
-}
-
-.image-url img,
-.video-url video {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 800px;
-}
-
-.link-url a {
-    display: block;
-    width: fit-content;
-    margin: 10px 0;
-}
-
-.full-post-preview footer {
+.full-post-preview > footer {
     display: flex;
     justify-content: space-between;
     width: 100%;
