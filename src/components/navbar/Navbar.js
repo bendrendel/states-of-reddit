@@ -25,8 +25,10 @@ function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <button className={`subreddit-list-button${subredditListOpen ? ' open' : ''}`}>
-                            <FontAwesomeIcon icon={faBars} onClick={handleHamburgerClick} />
+                        <button
+                            className={`subreddit-list-button${subredditListOpen ? ' open' : ''}`}
+                            onClick={handleHamburgerClick} >
+                            <FontAwesomeIcon icon={faBars} />
                         </button>
 
                         <SubredditList open={subredditListOpen} setOpen={setSubredditListOpen} />   
