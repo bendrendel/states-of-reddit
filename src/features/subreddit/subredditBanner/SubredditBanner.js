@@ -12,7 +12,7 @@ function SubredditBanner({ subredditName }) {
         .find(usState => usState.subredditName === subredditName)
         .abbreviation;
     
-    const usStateFlag = require(`../../../images/usStateFlags/${stateAbbreviation.toLowerCase()}.svg`);
+    const usStateFlag = require(`../../../images/usStateFlags/${stateAbbreviation.toLowerCase()}.png`);
 
     return (
         <div style={{ backgroundImage: `url(${usStateFlag})` }} className='subreddit-banner'>
