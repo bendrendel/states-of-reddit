@@ -10,7 +10,7 @@
 }
 
 .search:hover,
-.search:has(input:focus) {
+.search.focus {
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0 0 0 1px hsl(0, 0%, 75%);
     border-radius: 18px;

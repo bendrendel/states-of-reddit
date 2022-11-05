@@ -34,13 +34,21 @@ function Search() {
         handleSubmit(event);
     };
 
+    const handleFocus = (event) => {
+        document.getElementById('search').classList.add('focus');
+    };
+
+    const handleBlur = (event) => {
+        document.getElementById('search').classList.remove('focus');
+    };
+
     return (
-        <form onSubmit={handleSubmit} className='search'>
+        <form onSubmit={handleSubmit} className='search' id='search'>
             <button>
                 <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSearchClick} />    
             </button>
             
-            <input type="text" value={searchTerm} placeholder={`Search r/${subredditName}`} onChange={handleChange} />
+            <input type="text" value={searchTerm} placeholder={`Search r/${subredditName}`} onChange={handleChange} onFocus={handleFocus} onBlur={handleBlur} />
 
             <button>
                 <FontAwesomeIcon icon={faXmark} onClick={handleClearClick} />    
