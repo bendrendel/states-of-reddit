@@ -25,7 +25,7 @@
     padding: 15px 0 0 10px;
 }
 
-.markdown {
+.comment .markdown {
     color: hsl(0, 0%, 0%);
     padding-left: 10px;
     font-size: 16px;

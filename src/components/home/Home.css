@@ -17,7 +17,7 @@
     align-items: center;
     text-align: center;
     padding: calc(25px + 3vh) 50px calc(40px + 40vh);
-    background: linear-gradient(hsla(0, 0%, 0%, 0.5) 35%, hsla(0, 0%, 0%, 0) 100%);
+    background: linear-gradient(hsla(0, 0%, 0%, 0.5) 25%, hsla(0, 0%, 0%, 0) 100%);
 }
 
 .home h1 {
