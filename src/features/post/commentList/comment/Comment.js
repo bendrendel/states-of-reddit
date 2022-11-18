@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { timeSince, kmbt } from '../../../../util/formatting';
+import { timeSince, kmbt } from '../../../../utils/formatting';
 
 import Markdown from '../../../../components/markdown/Markdown';
 

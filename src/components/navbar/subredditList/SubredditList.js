@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { usStates } from '../../../util/usStates';
-import useOutsideClick from '../../../util/useOutsideClick';
+import { usStates } from '../../../utils/usStates';
+import useOutsideClick from '../../../utils/useOutsideClick';
 
 import './SubredditList.css';
 

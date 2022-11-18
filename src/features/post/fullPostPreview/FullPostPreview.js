@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import MediaContent from './mediaContent/MediaContent';
 import Markdown from '../../../components/markdown/Markdown';
 
-import { timeSince, kmbt, percent, unescape } from '../../../util/formatting';
+import { timeSince, kmbt, percent, unescape } from '../../../utils/formatting';
 
 import './FullPostPreview.css';
 

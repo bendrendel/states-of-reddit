@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Search from '../../search/Search';
 
-import { usStates } from '../../../util/usStates';
+import { usStates } from '../../../utils/usStates';
 
 import './SubredditBanner.css';
 
