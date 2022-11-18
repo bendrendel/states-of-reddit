@@ -6,7 +6,7 @@ function MediaContent({ post }) {
     if (post.post_hint === 'image') {
         return (
             <div className='media-content image-media'>
-                <a href={post.url} target='_blank'>
+                <a href={post.url} target='_blank' rel="noopener noreferrer">
                     <img src={post.url} alt='Uploaded jpg or png for post' />
                 </a>
             </div>
@@ -14,7 +14,7 @@ function MediaContent({ post }) {
     } else if (post.post_hint === 'hosted:video') {
         return (
             <div className='media-content video-media'>
-                <a href={post.media.reddit_video.fallback_url} target='_blank'>
+                <a href={post.media.reddit_video.fallback_url} target='_blank' rel="noopener noreferrer">
                     <video
                         controls
                         autoplay='autoplay'
@@ -30,7 +30,7 @@ function MediaContent({ post }) {
                 {
                     /\.(jpg|png)$/.test(post.thumbnail)
                         ? (
-                            <a href={post.url} target='_blank'>
+                            <a href={post.url} target='_blank' rel="noopener noreferrer">
                                 <img src={post.thumbnail} alt='Uploaded thumbnail for post' />
                             </a>
                         )
@@ -39,7 +39,7 @@ function MediaContent({ post }) {
                 }
                 {
                     !post.url.includes(post.permalink)
-                        ? <a href={post.url} target='_blank'>{post.url}</a>
+                        ? <a href={post.url} target='_blank' rel="noopener noreferrer">{post.url}</a>
                         : null
                 }
             </div>
