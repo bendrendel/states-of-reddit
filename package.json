@@ -1,6 +1,7 @@
 {
   "name": "states-of-reddit",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
