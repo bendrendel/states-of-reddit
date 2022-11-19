@@ -7,18 +7,18 @@ States of Reddit is a website that allows for easy browsing and searching of the
 Bullet list - maybe separate Features section - Explain how it meets project requirements
 
 ## Usage
-Go to [www.statesofreddit.com](https://wwww.statesofreddit.com) and start browsing!
+Go to [www.statesofreddit.com](https://www.statesofreddit.com/) and start browsing!
 
 ## Technologies
-React
-React Router
-React Markdown
-Remark GFM
-Luxon
-Redux
-Jest
-Enzyme
-Fortawesome
+* React
+* React Router
+* React Markdown
+* Remark GFM
+* Luxon
+* Redux
+* Jest
+* Enzyme
+* Fortawesome
 
 ## Status
 Future work
