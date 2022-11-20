@@ -1,6 +1,8 @@
 .loading {
     height: 30px;
     width: 30px;
+    min-height: 30px;
+    min-width: 30px;
     border-radius: 50%;
     border: 5pt solid hsl(0, 0%, 100%);
     border-top: 5pt solid hsl(213, 81.3%, 21%);
