@@ -31,8 +31,10 @@
     padding-right: 4px;
 }
 
-.full-post-preview > header a:hover {
-    text-decoration: underline;
+@media (hover: hover) {
+    .full-post-preview > header a:hover {
+        text-decoration: underline;
+    }    
 }
 
 .full-post-preview > h1 {

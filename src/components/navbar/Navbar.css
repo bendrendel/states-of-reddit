@@ -28,6 +28,7 @@
 .home-link {
     height: 40px;
     width: 40px;
+    border-radius: 50%;
     color: hsl(213, 81.3%, 21%);
     font-size: 16pt;
     display: flex;
@@ -35,8 +36,10 @@
     justify-content: center;
 }
 
-.home-link svg:hover {
-    color: hsl(213, 30%, 50%);
+@media (hover: hover) {
+    .home-link svg:hover {
+            color: hsl(213, 30%, 50%);
+        }
 }
 
 .home-link svg:active {
@@ -60,9 +63,11 @@
     justify-content: center;
 }
 
-.subreddit-list-button:hover {
-    background-color: hsla(0, 0%, 0%, 0.1);
-    cursor: pointer;
+@media (hover: hover) {
+    .subreddit-list-button:hover {
+        background-color: hsla(0, 0%, 0%, 0.1);
+        cursor: pointer;
+    }    
 }
 
 .subreddit-list-button.open {

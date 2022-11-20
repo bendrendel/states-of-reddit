@@ -17,8 +17,10 @@
     }
 }
 
-.short-post-preview:hover {
-    border-color: hsl(0, 0%, 55%);
+@media (hover: hover) {
+    .short-post-preview:hover {
+        border-color: hsl(0, 0%, 55%);
+    }
 }
 
 .short-post-preview header {

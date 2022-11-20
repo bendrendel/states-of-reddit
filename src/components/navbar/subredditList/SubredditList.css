@@ -42,8 +42,10 @@
     text-decoration: none;
 }
 
-.subreddit-list a:hover {
-    background-color: hsla(0, 0%, 0%, 0.1);
+@media (hover: hover) {
+    .subreddit-list a:hover {
+        background-color: hsla(0, 0%, 0%, 0.1);
+    }    
 }
 
 .subreddit-list a:active {

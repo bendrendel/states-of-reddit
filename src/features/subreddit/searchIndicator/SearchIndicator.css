@@ -10,6 +10,8 @@
     margin: 0 10px;
 }
 
-.search-indicator a:hover {
-    cursor: pointer;
+@media (hover: hover) {
+    .search-indicator a:hover {
+        cursor: pointer;
+    }   
 }

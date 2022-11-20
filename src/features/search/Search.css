@@ -9,7 +9,15 @@
     outline: none;
 }
 
-.search:hover,
+@media (hover: hover) {
+    .search:hover {
+        background-color: hsl(0, 0%, 100%);
+        box-shadow: 0 0 0 1px hsl(0, 0%, 75%);
+        border-radius: 18px;
+        transform: translateZ(0);
+    }
+}
+
 .search.focus {
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0 0 0 1px hsl(0, 0%, 75%);
@@ -45,9 +53,11 @@
     color: hsl(0, 0%, 60%);
 }
 
-.search svg:hover {
-    cursor: pointer;
-    color: hsl(0, 0%, 50%);
+@media (hover: hover) {
+    .search svg:hover {
+        cursor: pointer;
+        color: hsl(0, 0%, 50%);
+    }
 }
 
 .search svg:active {
