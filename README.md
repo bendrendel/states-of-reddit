@@ -1,7 +1,7 @@
 # States of Reddit
 The *fastest* way to browse the subreddits of the fifty U.S. states.
 
-## Description
+## Description and Features
 States of Reddit is a website that allows for easy browsing and searching of the fifty U.S. state subreddits.  It was created to fulfill the requirements of the Reddit Client project in the [Codecademy](https://www.codecademy.com) Front End Engineer Career Path.
 
 Bullet list - maybe separate Features section - Explain how it meets project requirements
@@ -9,7 +9,7 @@ Bullet list - maybe separate Features section - Explain how it meets project req
 ## Usage
 Go to [www.statesofreddit.com](https://www.statesofreddit.com/) and start browsing!
 
-## Technologies
+## Technologies Used
 * React
 * React Router
 * React Markdown
@@ -23,8 +23,10 @@ Go to [www.statesofreddit.com](https://www.statesofreddit.com/) and start browsi
 ## Status
 Future work
 
-## Design Artifacts
-Screenshots of wireframes
+## Design
+Wireframing and prototyping were done with [Figma](https://www.figma.com):
+
+<img src='./wireframe.png' width='500' alt='Wireframe' />
 
 ## Author
 Ben Drendel (contact info)
