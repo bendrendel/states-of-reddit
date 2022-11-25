@@ -29,11 +29,15 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    color: hsl(213, 81.3%, 21%);
     font-size: 16pt;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.home-link svg {
+    color: hsl(213, 81.3%, 21%);
+    transition: all 0.2s ease;
 }
 
 @media (hover: hover) {
@@ -61,6 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
 }
 
 @media (hover: hover) {
