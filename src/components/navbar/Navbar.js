@@ -29,12 +29,11 @@ function Navbar() {
                             className={`subreddit-list-button${subredditListOpen ? ' open' : ''}`}
                             onClick={handleHamburgerClick} >
                             <FontAwesomeIcon icon={faBars} />
-                        </button>
-
-                        <SubredditList open={subredditListOpen} setOpen={setSubredditListOpen} />   
+                        </button>   
                     </li>
-                </ul>                
-            </nav>           
+                </ul>    
+            </nav>
+            <SubredditList open={subredditListOpen} setOpen={setSubredditListOpen} />
         </header>
     )
 }

@@ -13,8 +13,6 @@
     overflow-y: auto;
     background-color: hsl(0, 0%, 100%);
     z-index: 90;
-    border: 1px solid hsla(0, 0%, 0%, 0.2);
-    box-shadow: 0 0 4px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 @media only screen and (min-width: 500px) {
@@ -26,6 +24,8 @@
         max-height: 1000px;
         left: auto;
         z-index: 110;
+        border: 1px solid hsla(0, 0%, 0%, 0.2);
+        box-shadow: 0 0 4px 0 hsla(0, 0%, 0%, 0.2);
     }
 }
 
