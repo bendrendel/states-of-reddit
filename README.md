@@ -4,22 +4,22 @@ The *fastest* way to browse the subreddits of the fifty U.S. states.
 ## Description & Features
 States of Reddit is a website that allows for easy browsing and searching of the fifty U.S. state subreddits.
 
-It was created to fulfill the following requirements of the Reddit Client project in the [Codecademy](https://www.codecademy.com) Front End Engineer Career Path.
+It was created to fulfill the following requirements of the Reddit Client project in Codecademy's Front End Engineer Career Path.
 * Built with React and Redux
 * Version control with Git and Github
 * Project management with Trello
-* Markdown README file with wireframes, technologies, features, and future work
+* Markdown README with wireframes, technologies used, features, and future work
 * Unit testing with Jest and Enzyme
 * End to end testing with Selenium
 * Works on desktop and mobile
-* Works on any modern browser (tested on Chrome, Firefox, and Safari)
+* Works on any modern browser (tested on Chrome, Firefox, Safari, and Edge)
 * Accessible at a URL
 * Initial view of data provided when first visiting app (after selecting a state)
-* Each subreddit is searchable
-* States act as predefined categories to filter to different data
+* The data is searchable within each state's subreddit
+* States act as predefined categories to filter reddit posts
 * Detailed view provided when a post is selected
 * Cohesive design
-* Loading animation and various transitions
+* Animations and transitions
 * Ability to leave error states
 * 90+ scores on lighthouse
 * Custom domain name
@@ -41,23 +41,22 @@ Go to [www.statesofreddit.com](https://www.statesofreddit.com/) and start browsi
 * Enzyme
 * Selenium
 
-## Status
-Future work
+## Future Work
+* Allow user to expand comment threads to see replies
+* Word map of most frequently used words in each state
 
 ## Design
-Wireframing and prototyping below were done in [Figma](https://www.figma.com).
+Wireframing and prototyping below were done using Figma.
 
 <img src='./wireframe.png' width='600' alt='Wireframe' />
 
 ## Author
-Ben Drendel (contact info)
+[Ben Drendel](https://github.com/bendrendel)
 
 ## License
 This project is licensed under the MIT License - see LICENSE.txt for details.
 
 ## Acknowledgments
-Unsplash image
-Flag images
-Font awesome
-Subreddit API
-Codecademy
+Home page image by [Brittney Weng](https://unsplash.com/@brittneyweng)
+
+State flag images by [Flagpedia](https://flagpedia.net)
