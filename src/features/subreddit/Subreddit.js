@@ -33,7 +33,7 @@ function Subreddit() {
         dispatch(fetchData(endpoint));
 
         return () => dispatch(resetState());
-    }, [subredditName, searchQuery]);
+    }, [subredditName, searchQuery, dispatch]);
 
     const apiContent = () => {
         if (hasError) {

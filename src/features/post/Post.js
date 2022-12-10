@@ -27,7 +27,7 @@ function Post() {
         const endpoint = `https://www.reddit.com/${url.slice(1, url.length - 1)}.json`;
         dispatch(fetchData(endpoint));
         return () => dispatch(resetState());
-    }, [url]);
+    }, [url, dispatch]);
 
     const apiContent = () => {
         if (hasError) {

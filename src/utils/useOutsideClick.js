@@ -12,7 +12,7 @@ export default function useOutsideClick(callback) {
         document.addEventListener('click', handleClick);
         
         return () => { document.removeEventListener('click', handleClick) };
-    }, [ref]);
+    }, [ref, callback]);
 
     return ref;
 }
