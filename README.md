@@ -30,15 +30,13 @@ Go to [www.statesofreddit.com](https://www.statesofreddit.com/) and start browsi
 
 ## Technologies Used
 * HTML/CSS/JS
-* React
-* Redux
-* React Router
-* React Markdown
-* Remark GFM
-* Luxon
-* Fortawesome
+* React v18
+* React Redux v8
+* React Router v5
+* Luxon v3
+* React Markdown v8
 * Jest
-* Enzyme
+* React Testing Library (using in place of Enzyme due to lack of support for React v18)
 * Selenium
 
 ## Future Work
